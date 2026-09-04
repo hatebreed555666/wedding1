@@ -363,7 +363,7 @@ section:not(.hero).is-visible:before{transform:translateY(0);opacity:1}
 .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,13,19,.38),transparent 28%,transparent 70%,rgba(7,13,19,.42));pointer-events:none}
 .hero-vignette{position:absolute;inset:0;background:radial-gradient(circle at center 34%,transparent 0 34%,rgba(3,10,15,.22) 78%,rgba(3,10,15,.55) 100%);z-index:1}
 .hero-frame{position:absolute;inset:20px;border:1px solid rgba(255,255,255,.48);z-index:3;pointer-events:none}
-.hero-content.movie-cover{z-index:4;width:min(920px,94vw);padding:20px 20px 118px;margin-top:0;margin-bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end}
+.hero-content.movie-cover{z-index:4;width:min(920px,94vw);padding:20px 20px 72px;margin-top:0;margin-bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end}
 .hero .kicker{color:rgba(255,255,255,.92);font-size:9px;line-height:1.45;letter-spacing:.38em;text-shadow:0 2px 12px rgba(0,0,0,.6);margin-bottom:16px;padding:0 8px}
 .hero .names{display:block;width:auto;margin:0;color:#fff8ef;text-shadow:0 8px 26px rgba(0,0,0,.42);font-size:clamp(74px,9.4vw,145px);line-height:.7;white-space:nowrap}
 .hero .name-line{display:inline;white-space:nowrap}
@@ -373,12 +373,12 @@ section:not(.hero).is-visible:before{transform:translateY(0);opacity:1}
 .hero .place{margin-top:10px;color:rgba(255,255,255,.9);font-size:9px;letter-spacing:.28em;text-shadow:0 2px 10px rgba(0,0,0,.55)}
 .hero-side{position:absolute;z-index:4;top:76px;color:rgba(255,255,255,.92);font-size:10px;letter-spacing:.42em;line-height:2.25;text-align:center;font-weight:500;text-shadow:0 2px 10px rgba(0,0,0,.55)}
 .hero-side.left{left:5.2vw}.hero-side.right{right:5.2vw}
-.scroll{z-index:4;bottom:18px;color:rgba(255,255,255,.9);letter-spacing:.32em;font-size:9px;display:flex;flex-direction:column;align-items:center;gap:10px}
-.scroll span{width:1px;height:38px;background:rgba(255,255,255,.55);display:block}
+.scroll{z-index:4;bottom:16px;color:rgba(255,255,255,.9);letter-spacing:.32em;font-size:9px;display:flex;flex-direction:column;align-items:center;gap:10px}
+.scroll span{display:none}
 @media(max-width:700px){
   .hero{min-height:100svh;background-position:55% center!important}
   .hero-frame{inset:10px}
-  .hero-content.movie-cover{width:100%;padding:12px 22px 96px;margin-top:0;margin-bottom:0}
+  .hero-content.movie-cover{width:100%;padding:10px 22px 58px;margin-top:0;margin-bottom:0}
   .hero .kicker{font-size:7px;line-height:1.5;letter-spacing:.28em;margin-bottom:15px;padding:0 10px}
   .hero .names{font-size:clamp(60px,18vw,90px);line-height:.72;white-space:normal}
   .hero .name-line{display:block}
@@ -386,7 +386,7 @@ section:not(.hero).is-visible:before{transform:translateY(0);opacity:1}
   .hero .date{font-size:16px;letter-spacing:.22em;margin-top:14px}
   .hero .place{max-width:300px;font-size:8px;line-height:1.7;letter-spacing:.2em}
   .hero-side{top:42px;font-size:7px;letter-spacing:.32em;line-height:2;text-align:left}.hero-side.left{left:24px}.hero-side.right{right:24px;text-align:right}
-  .scroll{bottom:18px;font-size:8px;letter-spacing:.26em}.scroll span{height:30px}
+  .scroll{bottom:14px;font-size:8px;letter-spacing:.26em}.scroll span{display:none}
 }
 @media(max-width:390px){.hero .names{font-size:56px}.hero-side{font-size:6.5px}.hero .kicker{font-size:6.5px;letter-spacing:.24em;margin-bottom:13px}.hero .date{font-size:14px}}
 
@@ -409,7 +409,7 @@ section:not(.hero).is-visible:before{transform:translateY(0);opacity:1}
   <div class="date">OCTOBER 10, 2026</div>
   <div class="place">Sto. Niño Parish Church • Lipa City, Batangas</div>
  </div>
- <div class="scroll"><span></span>SCROLL TO BEGIN</div>
+ <div class="scroll">SCROLL TO BEGIN</div>
 </section>
 
 <section class="intro">
