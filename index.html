@@ -353,110 +353,63 @@ section:not(.hero).is-visible:before{transform:translateY(0);opacity:1}
   section:not(.hero) .wrap,section:not(.hero) .story-grid{opacity:1;transform:none;filter:none}
 }
 
-
-/* ===== MOBILE-FIRST INVITATION REFINEMENT ===== */
-html{background:#eef4f8}
-body{font-size:16px;line-height:1.5}
-.wrap{width:min(100% - 28px,720px)}
-/* Landing page: cinematic poster with the invitation copy underneath */
-.hero{min-height:auto;display:block;text-align:center;background:linear-gradient(180deg,#f7fbfd,#e8f1f6);padding:14px 0 34px;overflow:visible}
+/* ===== CINEMATIC MOVIE-COVER LANDING PAGE ===== */
+.hero{
+  min-height:100svh; min-height:100vh;
+  background:linear-gradient(180deg,rgba(10,18,24,.08) 25%,rgba(10,20,28,.24) 56%,rgba(8,18,27,.88) 100%),url("landingpage.jpg") center center/cover no-repeat !important;
+  display:flex;align-items:center;justify-content:center;text-align:center;
+}
 .hero:before{display:none}
-.hero-poster{width:min(100% - 28px,720px);height:min(68vh,620px);min-height:390px;margin:0 auto;border-radius:0 0 28px 28px;background:url("landingpage.jpg") center/cover no-repeat;box-shadow:0 18px 45px rgba(58,82,98,.22);position:relative;overflow:hidden}
-.hero-poster:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,29,40,.04) 45%,rgba(15,29,40,.25))}
-.hero-content{padding:30px 20px 0;max-width:760px;margin:auto}
-.hero .kicker{font-size:9px;color:#718e9f;letter-spacing:.28em}
-.movie-tagline{font-family:"Cormorant Garamond",serif;font-size:clamp(18px,4.7vw,26px);line-height:1.25;color:#6f8492;font-style:italic;max-width:460px;margin:10px auto 20px}
-.hero .names{font-size:clamp(60px,15vw,108px);gap:2px;margin:10px auto 18px;line-height:.82;color:#526d7f;text-shadow:none}
-.hero .name-line{white-space:nowrap}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,13,19,.38),transparent 28%,transparent 70%,rgba(7,13,19,.42));pointer-events:none}
+.hero-vignette{position:absolute;inset:0;background:radial-gradient(circle at center 34%,transparent 0 34%,rgba(3,10,15,.22) 78%,rgba(3,10,15,.55) 100%);z-index:1}
+.hero-frame{position:absolute;inset:20px;border:1px solid rgba(255,255,255,.48);z-index:3;pointer-events:none}
+.hero-content.movie-cover{z-index:4;width:min(920px,94vw);padding:20px 20px 118px;margin-top:16vh;display:flex;flex-direction:column;align-items:center}
+.hero .kicker{color:rgba(255,255,255,.92);font-size:10px;letter-spacing:.48em;text-shadow:0 2px 12px rgba(0,0,0,.6);margin-bottom:12px}
+.hero .names{display:block;width:auto;margin:0;color:#fff8ef;text-shadow:0 8px 26px rgba(0,0,0,.42);font-size:clamp(74px,9.4vw,145px);line-height:.7;white-space:nowrap}
+.hero .name-line{display:inline;white-space:nowrap}
 .hero .jon,.hero .vennie{transform:none}
-.hero .and{font-size:.33em;color:#8ea8ba;line-height:.45}
-.hero .date{font-size:clamp(19px,4.5vw,25px);letter-spacing:.16em;margin-top:20px;color:#526d7f}
-.hero .place{font-size:9px;line-height:1.6;letter-spacing:.14em;padding:0 10px;color:#6f8492}
-.hero-cta{display:inline-block;margin-top:24px;padding:12px 18px;border-radius:999px;background:#d8e7ef;color:#587284;font-size:9px;font-weight:600;letter-spacing:.16em}
-/* Better section rhythm for phone */
-.intro,.gallery-section,.story,.details,.ent,.final{padding:68px 0}
-.intro{padding-top:76px}
-.intro h2,.gallery-head h2,.section-head h2,.story-copy h2,.ent-title{font-size:clamp(42px,11vw,68px);line-height:.95}
-.intro p{font-size:21px;padding:0 4px}
-.rule{margin:18px 0}.rule:before,.rule:after{width:72px}
-/* Gallery becomes a swipe-friendly cinematic deck */
-.gallery-head{margin-bottom:28px}
-.gallery-stage{height:min(72vw,520px);min-height:340px;border-radius:22px;overflow:hidden}
-.slide{border-radius:22px}
-.slide-copy{left:8%;right:8%;bottom:8%;max-width:none;text-align:left}
-.slide-copy h3{font-size:clamp(31px,8vw,48px);line-height:1.02}
-.gallery-controls{gap:6px;margin-top:16px;overflow-x:auto;padding:5px 2px;justify-content:flex-start}
-.dot{flex:0 0 22px;height:3px;border-radius:4px}
-.gallery-thumbs{display:none}
-/* Story card is stacked and easy to read */
-.story-grid{border-radius:24px;overflow:hidden;min-height:0}
-.story-photo{min-height:340px}
-.story-copy{padding:38px 24px}
-.story-copy h2{margin:8px 0 18px}
-.story-item{padding:18px 0}
-.story-item h3{font-size:27px}.story-item p{font-size:20px;line-height:1.5}
-/* Details become prominent invitation cards */
-.detail-grid{border:0;background:transparent;box-shadow:none;gap:14px}
-.detail{border:0!important;border-radius:20px;background:#fff;padding:30px 22px;box-shadow:0 10px 28px rgba(91,118,135,.09)}
-.detail h3{font-size:26px;margin:8px 0}.detail p{font-size:20px}
-/* Entourage: compact, no horizontal crowding */
-.ent-page{padding:34px 16px;border-radius:22px;margin-bottom:20px;min-height:0}
-.ent-page:before{inset:8px;border-radius:16px}
-.ent-title{font-size:clamp(40px,10vw,62px);letter-spacing:.04em}
-.ent-intro{font-size:20px;padding:0 4px}
-.parents{gap:14px;margin:22px auto 28px}
-.parent{padding:24px 14px;min-height:0;background:rgba(255,255,255,.55);border-radius:16px}
-.parent .name{font-size:21px}.sponsors{gap:0;margin-top:12px}
-.sponsor{font-size:19px;padding:11px 8px;border-bottom:1px solid var(--line);white-space:normal}
-.toprow{border-radius:16px;overflow:hidden}.honor{padding:22px 14px}.honor h2{font-size:24px}.honor p{font-size:21px}
-.roles,.roles.four{grid-template-columns:1fr 1fr;gap:0;border-radius:16px;overflow:hidden}
-.role{min-height:175px;padding:22px 12px;border-top:1px solid var(--line)!important;border-left:1px solid var(--line)!important;background:rgba(255,255,255,.55)}
-.role:nth-child(1),.role:nth-child(2){border-top:0!important}.role:nth-child(odd){border-left:0!important}
-.roles:not(.four) .role:nth-child(3){grid-column:1/-1}
-.role h3,.roles.four .role h3{font-size:17px;letter-spacing:.08em}.role .name,.roles.four .role .name{font-size:17px;line-height:1.35}
-.icon-svg{width:62px;height:50px}
-.party{border-radius:16px;overflow:hidden}.group{padding:24px 16px}.group h3{font-size:25px}.list{font-size:19px;line-height:1.65}
-/* Final details use clear tap-sized cards */
-.final-grid{border:0;background:transparent;box-shadow:none;gap:14px}
-.final-card{min-height:0;border:0!important;border-radius:20px;padding:32px 22px;box-shadow:0 10px 28px rgba(91,118,135,.09)}
-.final-card h3{font-size:31px}.final-card p{font-size:20px}.btn{margin-top:18px;width:100%;padding:16px 12px;border-radius:999px;text-align:center}
-.closing-photo{margin-top:24px;min-height:520px;border-radius:24px;background:url("final.jpg") center/cover no-repeat}
-.closing-photo:before{inset:10px;border-radius:18px}.closing-photo-overlay{padding:70px 18px 38px}.closing-photo-overlay h2{font-size:clamp(40px,11vw,60px)}
-.closing-photo-overlay .verse{font-size:22px}.closing-photo-overlay .verse-ref{margin-bottom:32px}
-/* Mobile navigation and motion polish */
-@media(max-width:480px){
-  .wrap{width:calc(100% - 24px)}
-  .hero{padding-top:10px}.hero-poster{width:calc(100% - 20px);height:58vh;min-height:360px;border-radius:0 0 24px 24px}
-  .hero-content{padding:26px 14px 0}.movie-tagline{font-size:20px}.hero .names{font-size:18vw}.hero .date{font-size:18px;letter-spacing:.12em}
-  .intro,.gallery-section,.story,.details,.ent,.final{padding:58px 0}.story-photo{min-height:300px}.gallery-stage{height:108vw;min-height:320px}
-  .roles,.roles.four{grid-template-columns:1fr}.role,.role:nth-child(n){border-left:0!important}.role:nth-child(n+2){border-top:1px solid var(--line)!important}.roles:not(.four) .role:nth-child(3){grid-column:auto}
-  .final-card{padding:28px 18px}.closing-photo{min-height:500px}
+.hero .and{display:block;font-size:.42em;line-height:.68;margin:5px 0;color:#fff8ef}
+.hero .date{margin-top:22px;color:#fff;font-family:"Cormorant Garamond",serif;font-size:clamp(17px,2vw,26px);letter-spacing:.28em;text-shadow:0 2px 12px rgba(0,0,0,.5)}
+.hero .place{margin-top:10px;color:rgba(255,255,255,.9);font-size:9px;letter-spacing:.28em;text-shadow:0 2px 10px rgba(0,0,0,.55)}
+.hero-side{position:absolute;z-index:4;top:76px;color:rgba(255,255,255,.92);font-size:10px;letter-spacing:.42em;line-height:2.25;text-align:center;font-weight:500;text-shadow:0 2px 10px rgba(0,0,0,.55)}
+.hero-side.left{left:5.2vw}.hero-side.right{right:5.2vw}
+.scroll{z-index:4;bottom:18px;color:rgba(255,255,255,.9);letter-spacing:.32em;font-size:9px;display:flex;flex-direction:column;align-items:center;gap:10px}
+.scroll span{width:1px;height:38px;background:rgba(255,255,255,.55);display:block}
+@media(max-width:700px){
+  .hero{min-height:100svh;background-position:55% center!important}
+  .hero-frame{inset:10px}
+  .hero-content.movie-cover{width:100%;padding:12px 22px 104px;margin-top:18vh}
+  .hero .kicker{font-size:8px;letter-spacing:.34em;margin-bottom:10px}
+  .hero .names{font-size:clamp(60px,18vw,90px);line-height:.72;white-space:normal}
+  .hero .name-line{display:block}
+  .hero .and{font-size:.46em;margin:3px 0}
+  .hero .date{font-size:16px;letter-spacing:.22em;margin-top:18px}
+  .hero .place{max-width:300px;font-size:8px;line-height:1.7;letter-spacing:.2em}
+  .hero-side{top:42px;font-size:7px;letter-spacing:.32em;line-height:2;text-align:left}.hero-side.left{left:24px}.hero-side.right{right:24px;text-align:right}
+  .scroll{bottom:18px;font-size:8px;letter-spacing:.26em}.scroll span{height:30px}
 }
-@media(min-width:851px){
-  .hero{display:grid;place-items:center;min-height:100vh;padding:0;background:linear-gradient(90deg,rgba(235,244,249,.68),rgba(214,229,238,.18),rgba(235,244,249,.55)),url("landingpage.jpg") center/cover no-repeat}
-  .hero-poster{display:none}.hero-content{padding:90px 20px;background:rgba(255,255,255,.22);backdrop-filter:blur(2px);border-radius:28px}
-  .hero .names{font-size:clamp(76px,10vw,145px)}.movie-tagline{font-size:28px}
-}
+@media(max-width:390px){.hero .names{font-size:56px}.hero-side{font-size:6.5px}.hero .date{font-size:14px}}
 
 </style>
 </head>
 <body>
 
-<section class="hero bg-grain">
-  <div class="hero-poster" role="img" aria-label="Jon Carlo and Vennie Ann"></div>
-  <div class="hero-content">
-    <div class="kicker">A new chapter begins</div>
-    <div class="movie-tagline">The story of two paths becoming one forever.</div>
-    <div class="names">
-      <span class="name-line jon">Jon Carlo</span>
-      <span class="and">&amp;</span>
-      <span class="name-line vennie">Vennie Ann</span>
-    </div>
-    <div class="rule">✦</div>
-    <div class="date">OCTOBER 10, 2026</div>
-    <div class="place">Sto. Niño Parish Church • Lipa City, Batangas</div>
-    <div class="hero-cta">SCROLL TO OPEN OUR STORY ↓</div>
+<section class="hero bg-grain" id="home">
+ <div class="hero-vignette"></div>
+ <div class="hero-frame" aria-hidden="true"></div>
+ <div class="hero-side left">A NEW<br>CHAPTER</div>
+ <div class="hero-side right">SAME<br>FOREVER</div>
+ <div class="hero-content movie-cover">
+  <div class="kicker">Together with our families</div>
+  <div class="names">
+    <span class="name-line jon">Jon Carlo</span>
+    <span class="and">&amp;</span>
+    <span class="name-line vennie">Vennie Ann</span>
   </div>
+  <div class="date">OCTOBER 10, 2026</div>
+  <div class="place">Sto. Niño Parish Church • Lipa City, Batangas</div>
+ </div>
+ <div class="scroll"><span></span>SCROLL TO BEGIN</div>
 </section>
 
 <section class="intro">
@@ -658,10 +611,6 @@ function resetTimer(){
 }
 dots.forEach((d,i)=>d.addEventListener('click',()=>showSlide(i)));
 thumbs.forEach((t,i)=>t.addEventListener('click',()=>showSlide(i)));
-let touchStartX=0;
-const galleryStage=document.querySelector('.gallery-stage');
-galleryStage?.addEventListener('touchstart',e=>{touchStartX=e.changedTouches[0].screenX},{passive:true});
-galleryStage?.addEventListener('touchend',e=>{const dx=e.changedTouches[0].screenX-touchStartX;if(Math.abs(dx)>40)showSlide(current+(dx<0?1:-1))},{passive:true});
 resetTimer();
 
 /* Romantic scroll reveal — keeps the original page structure intact */
