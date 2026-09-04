@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Jon Carlo & Vennie Ann | Wedding Invitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+ --black:#eef4f8;--charcoal:#e4edf4;--ink:#536979;--cream:#ffffff;
+ --champ:#8ea8ba;--gold:#a8bfce;--muted:#718594;--line:rgba(111,139,157,.28);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--black);color:var(--cream);font-family:Montserrat,Arial,sans-serif;overflow-x:hidden}
+section{position:relative}
+.bg-grain:after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.12;background-image:radial-gradient(rgba(255,255,255,.5) .6px,transparent .8px);background-size:5px 5px}
+.wrap{width:min(1220px,calc(100% - 44px));margin:auto}
+.kicker{font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(--champ);font-weight:600}
+h1,h2,h3{font-family:"Cormorant Garamond",serif;font-weight:500}
+.rule{display:flex;align-items:center;justify-content:center;gap:14px;color:var(--gold);margin:24px 0}
+.rule:before,.rule:after{content:"";height:1px;width:120px;background:linear-gradient(90deg,transparent,var(--line))}
+.rule:after{background:linear-gradient(90deg,var(--line),transparent)}
+.btn{display:inline-block;border:1px solid var(--champ);padding:15px 26px;text-transform:uppercase;font-size:10px;letter-spacing:.22em;color:var(--cream);transition:.35s}
+.btn:hover{background:var(--champ);color:var(--black)}
+.gold{color:var(--champ)}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;place-items:center;text-align:center;overflow:hidden;background:
+linear-gradient(90deg,rgba(8,9,11,.88),rgba(8,9,11,.56),rgba(8,9,11,.84)),
+url("landingpage.jpg") center/cover no-repeat}
+.hero:before{content:"";position:absolute;inset:18px;border:1px solid rgba(217,195,154,.35)}
+.hero-content{position:relative;z-index:2;padding:90px 20px}
+.hero .names{font-family:"Great Vibes",cursive;font-size:clamp(78px,12vw,170px);line-height:.78;margin:24px 0;color:#f7f1e7;text-shadow:0 12px 35px rgba(0,0,0,.45)}
+.hero .and{font-family:"Cormorant Garamond",serif;font-size:.25em;font-style:italic;color:var(--champ);vertical-align:middle}
+.hero .date{font-family:"Cormorant Garamond",serif;font-size:25px;letter-spacing:.22em;margin-top:28px}
+.hero .place{margin-top:12px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#d8d0c3}
+.scroll{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:3;font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--muted);animation:float 2s ease-in-out infinite}
+@keyframes float{50%{transform:translate(-50%,-8px)}}
+
+
+/* DUSTY BLUE MOTIF + BALANCED LANDING */
+.hero{
+ background:
+ linear-gradient(90deg,rgba(10,18,28,.88),rgba(34,53,69,.54),rgba(10,18,28,.88)),
+ url("landingpage.jpg") center/cover no-repeat;
+}
+.hero .names{
+ display:flex;flex-direction:column;align-items:center;gap:6px;
+ font-size:clamp(76px,10vw,145px);line-height:.82;margin:26px auto;
+ width:min(900px,100%);
+}
+.hero .name-line{display:block;white-space:nowrap}
+.hero .jon{transform:translateX(-4%)}
+.hero .vennie{transform:translateX(4%)}
+.hero .and{display:block;line-height:.55;margin:2px 0;color:#b9c8d8}
+.hero .date{color:#f3f7fa}
+.hero .place{color:#cbd9e5}
+.hero:before{border-color:rgba(206,221,233,.42)}
+@media(max-width:600px){
+ .hero .names{font-size:clamp(62px,18vw,95px)}
+ .hero .name-line{white-space:normal}
+ .hero .jon,.hero .vennie{transform:none}
+}
+
+/* INTRO */
+.intro{padding:130px 0;text-align:center;background:linear-gradient(180deg,#101319,#17212b)}
+.intro h2{font-size:clamp(48px,6vw,82px);letter-spacing:.04em;margin:10px 0}
+.intro p{max-width:700px;margin:25px auto;color:#d9e2e9;font-family:"Cormorant Garamond",serif;font-size:25px;line-height:1.55}
+
+/* GALLERY */
+.gallery-section{padding:110px 0 130px;background:#17212b;overflow:hidden}
+.gallery-head{text-align:center;margin-bottom:48px}
+.gallery-head h2{font-size:clamp(48px,6vw,76px);margin:8px 0}
+.gallery-stage{position:relative;width:min(1120px,100%);height:610px;margin:auto}
+.slide{position:absolute;inset:0;opacity:0;transform:scale(1.08);transition:opacity 1.15s ease,transform 1.8s cubic-bezier(.2,.7,.2,1);overflow:hidden;border:1px solid var(--line)}
+.slide.active{opacity:1;transform:scale(1)}
+.slide::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.72))}
+.slide.one{background:url("landingpage.jpg") center/cover no-repeat}
+.slide.two{background:url("371.jpg") center/cover no-repeat}
+.slide.three{background:url("372.jpg") center/cover no-repeat}
+.slide-copy{position:absolute;z-index:2;left:9%;bottom:10%;max-width:500px}
+.slide-copy span{font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--champ)}
+.slide-copy h3{font-size:54px;margin:10px 0 0}
+.gallery-controls{display:flex;justify-content:center;gap:10px;margin-top:22px}
+.dot{width:42px;height:2px;border:0;background:#4c4a45;cursor:pointer;padding:0}
+.dot.active{background:var(--champ)}
+.gallery-thumbs{display:flex;gap:14px;margin-top:18px;justify-content:center}
+.thumb{width:95px;height:70px;border:1px solid transparent;opacity:.5;cursor:pointer;background-size:cover;background-position:center}
+.thumb.active{opacity:1;border-color:var(--champ)}
+.thumb:nth-child(1){background-image:url("370.jpg")}
+.thumb:nth-child(2){background-image:url("371.jpg")}
+.thumb:nth-child(3){background-image:url("372.jpg")}
+
+/* STORY */
+.story{padding:130px 0;background:#10171e}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;min-height:620px;border:1px solid var(--line)}
+.story-photo{background:linear-gradient(rgba(0,0,0,.18),rgba(0,0,0,.3)),url("story.jpg") center/cover no-repeat;min-height:580px}
+.story-copy{padding:70px 9%;display:flex;flex-direction:column;justify-content:center}
+.story-copy h2{font-size:62px;margin:8px 0 20px}
+.story-item{padding:16px 0;border-top:1px solid rgba(217,195,154,.18)}
+.story-item h3{font-size:28px;margin:0 0 6px;color:var(--champ)}
+.story-item p{font-family:"Cormorant Garamond",serif;font-size:22px;line-height:1.55;color:#d7e0e7;margin:0}
+
+/* DETAILS */
+.details{padding:125px 0;background:linear-gradient(180deg,#17212b,#101319)}
+.section-head{text-align:center}.section-head h2{font-size:clamp(48px,6vw,78px);margin:8px 0}
+.detail-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:50px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.detail{padding:40px 28px;text-align:center;border-right:1px solid var(--line)}
+.detail:last-child{border-right:0}.detail .symbol{font-size:28px;color:var(--champ)}
+.detail h3{font-size:28px;text-transform:uppercase;letter-spacing:.1em;margin:12px 0}
+.detail p{font-family:"Cormorant Garamond",serif;font-size:21px;line-height:1.5;color:#d7e0e7;margin:0}
+
+/* ENTOURAGE */
+.ent{padding:100px 0;background:#0d141b}
+.ent-page{position:relative;margin-bottom:38px;padding:60px 68px;min-height:720px;background:linear-gradient(135deg,#15171c,#10171e);border:1px solid var(--line);box-shadow:0 28px 80px rgba(0,0,0,.35)}
+.ent-page:before{content:"";position:absolute;inset:12px;border:1px solid rgba(217,195,154,.13);pointer-events:none}
+.ent-content{position:relative;z-index:2}.ent-intro{text-align:center;max-width:760px;margin:0 auto 30px;font-family:"Cormorant Garamond",serif;font-size:23px;line-height:1.55;color:#d7e0e7}
+.ent-title{text-align:center;font-size:68px;letter-spacing:.07em;margin:8px 0}
+.parents{display:grid;grid-template-columns:1fr 1fr;gap:34px;max-width:1040px;margin:34px auto 42px}
+.parent{text-align:center;padding:34px 24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);min-height:140px;display:flex;flex-direction:column;justify-content:center}
+.parent h3,.label,.group h3,.role h3{font-family:"Cormorant Garamond",serif;text-transform:uppercase;letter-spacing:.1em;font-size:24px;margin:0 0 12px;color:var(--champ)}
+.name{font-family:"Cormorant Garamond",serif;font-size:22px;font-weight:600;color:#f3f6f8;line-height:1.35}
+.sep{height:1px;background:var(--line);margin:28px 0}.label{text-align:center;font-size:29px}
+.sponsors{display:grid;grid-template-columns:1fr 1fr;gap:8px 70px;max-width:1100px;margin:22px auto 0}
+.sponsor{text-align:center;font-family:"Cormorant Garamond",serif;font-size:21px;line-height:1.7;font-weight:600;white-space:nowrap;color:#e1e8ee;padding:4px 0}
+.toprow,.party{display:grid;grid-template-columns:1fr 1fr}
+.toprow{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.honor{text-align:center;padding:24px}.honor+.honor{border-left:1px solid var(--line)}
+.honor h2{font-size:29px;text-transform:uppercase;letter-spacing:.1em;color:var(--champ);margin:0 0 8px}.honor p{font-family:"Cormorant Garamond",serif;font-size:24px;font-weight:600;margin:0}
+.roles{display:grid;grid-template-columns:repeat(3,1fr)}.roles.four{grid-template-columns:repeat(4,1fr)}
+.role{text-align:center;padding:18px 12px;min-height:140px;border-left:1px solid var(--line)}.role:first-child{border-left:0}
+.role .icon{font-size:34px;color:var(--champ);height:42px;display:flex;align-items:center;justify-content:center;filter:grayscale(.2)}.role h3{font-size:21px;margin:7px 0}.role .name{font-size:19px}
+.party{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.group{text-align:center;padding:22px 35px}.group+.group{border-left:1px solid var(--line)}
+.group h3{font-size:28px}.list{font-family:"Cormorant Garamond",serif;font-size:21px;font-weight:600;color:#e1e8ee;line-height:1.8}.list span{display:block;white-space:nowrap}
+
+/* FINAL PAGE: celebration, attire, mailbox */
+.final{padding:125px 0;background:linear-gradient(135deg,#191a1d,#0d0e10)}
+.final-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:50px;border:1px solid var(--line)}
+.final-card{min-height:400px;padding:48px 30px;text-align:center;border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:center}
+.final-card:last-child{border-right:0}
+.final-card .big{font-size:46px;color:var(--champ)}
+.final-card h3{font-size:34px;letter-spacing:.08em;margin:15px 0 10px;color:#f5f8fa}
+.final-card p{font-family:"Cormorant Garamond",serif;font-size:22px;line-height:1.55;color:#d7e0e7;margin:0}
+
+/* ===== SUPPLIED PHOTO INTEGRATION ===== */
+.gallery-thumbs{flex-wrap:wrap;max-width:1120px;margin-left:auto;margin-right:auto}
+.gallery-thumbs .thumb{border-radius:2px}
+.closing-photo{position:relative;margin-top:42px;min-height:680px;border:1px solid var(--line);overflow:hidden;background:linear-gradient(180deg,rgba(20,35,45,.05),rgba(20,35,45,.55)),url("final.jpg") center/cover no-repeat;display:flex;align-items:flex-end;justify-content:center;box-shadow:0 20px 60px rgba(91,118,135,.16)}
+.closing-photo:before{content:"";position:absolute;inset:16px;border:1px solid rgba(255,255,255,.42);pointer-events:none}
+.closing-photo-overlay{position:relative;z-index:1;width:min(820px,92%);text-align:center;color:white;padding:90px 26px 64px;text-shadow:0 4px 24px rgba(0,0,0,.42)}
+.closing-photo-overlay .kicker{color:#eef7fb}
+.closing-photo-overlay h2{font-size:clamp(38px,5vw,64px);margin:8px 0 24px;font-family:"Great Vibes",cursive;font-weight:400;line-height:1.05}
+.closing-photo-overlay .verse{font-family:"Cormorant Garamond",serif;font-size:clamp(23px,2.4vw,31px);line-height:1.42;letter-spacing:.01em;margin:0 auto 12px;color:white;font-style:italic;max-width:760px}
+.closing-photo-overlay .verse-ref{font-family:"Montserrat",sans-serif;font-size:12px;letter-spacing:.22em;text-transform:uppercase;margin:0 0 48px;color:#eef7fb}
+.closing-photo-overlay .closing-names{font-family:"Cormorant Garamond",serif;font-size:clamp(24px,2.5vw,31px);letter-spacing:.14em;margin:0 0 10px;color:white}
+.closing-photo-overlay .closing-date{font-family:"Montserrat",sans-serif;font-size:14px;letter-spacing:.3em;margin:0;color:#eef7fb}
+@media(max-width:850px){.closing-photo{min-height:520px}.gallery-thumbs{gap:10px}.gallery-thumbs .thumb{width:78px;height:58px}}
+
+@media(max-width:850px){
+ .story-grid,.detail-grid,.parents,.sponsors,.toprow,.party,.final-grid{grid-template-columns:1fr}
+ .gallery-stage{height:480px}.story-photo{min-height:430px}
+ .detail,.final-card{border-right:0;border-bottom:1px solid var(--line)}.detail:last-child,.final-card:last-child{border-bottom:0}
+ .honor+.honor,.group+.group{border-left:0;border-top:1px solid var(--line)}
+ .roles,.roles.four{grid-template-columns:1fr}.role{border-left:0;border-top:1px solid var(--line)}.role:first-child{border-top:0}
+ .ent-page{padding:44px 20px}.sponsor,.name,.honor p,.role .name,.list span{white-space:normal}
+}
+
+/* ===== LIGHT DUSTY BLUE + WHITE MOTIF OVERRIDE ===== */
+body{background:#eef4f8;color:#536979}
+.hero{
+ background:
+ linear-gradient(90deg,rgba(235,244,249,.90),rgba(214,229,238,.54),rgba(235,244,249,.88)),
+ url("landingpage.jpg") center/cover no-repeat;
+}
+.hero:before{border-color:rgba(112,143,162,.42)}
+.hero .names{color:#526d7f;text-shadow:0 10px 28px rgba(82,109,127,.14)}
+.hero .and{color:#8ea8ba}
+.hero .date{color:#526d7f}
+.hero .place{color:#60798b}
+.intro{background:linear-gradient(180deg,#ffffff,#eef4f8)}
+.intro h2,.section-head h2,.gallery-head h2,.story-copy h2,.ent-title{color:#526d7f}
+.intro p,.story-item p,.detail p,.ent-intro,.final-card p{color:#657b89}
+.gallery-section{background:#e9f1f6}
+.story{background:#f7fbfd}
+.story-grid{background:#fff;border-color:var(--line);box-shadow:0 18px 55px rgba(91,118,135,.10)}
+.details{background:linear-gradient(180deg,#ffffff,#eaf2f7)}
+.detail-grid{background:#fff;box-shadow:0 18px 55px rgba(91,118,135,.08)}
+.ent{background:#edf4f8}
+.ent-page{
+ background:linear-gradient(135deg,#ffffff,#edf4f8);
+ border-color:rgba(111,139,157,.26);
+ box-shadow:0 24px 65px rgba(91,118,135,.12)
+}
+.ent-page:before{border-color:rgba(111,139,157,.16)}
+.name,.honor p{color:#526d7f}
+.sponsor,.list{color:#5e7482}
+.final{background:linear-gradient(135deg,#e4eef4,#ffffff)}
+.final-grid{background:#fff;box-shadow:0 18px 55px rgba(91,118,135,.10)}
+.final-card h3{color:#526d7f}
+.final-card{background:rgba(255,255,255,.72)}
+.kicker,.gold,.parent h3,.label,.group h3,.role h3,.honor h2,.detail .symbol,.role .icon,.final-card .big{color:#7f9caf}
+.rule{color:#8ea8ba}
+.btn{color:#526d7f;border-color:#8ea8ba;background:rgba(255,255,255,.65)}
+.btn:hover{background:#8ea8ba;color:white}
+.slide{border-color:rgba(111,139,157,.35)}
+.dot{background:#c8d7e1}.dot.active{background:#8ea8ba}
+.thumb.active{border-color:#8ea8ba}
+.slide-copy h3{color:white;text-shadow:0 4px 20px rgba(0,0,0,.35)}
+.scroll{color:#6e8595}
+.hero .date{font-weight:600}
+@media(max-width:850px){
+ .ent-page{box-shadow:0 14px 40px rgba(91,118,135,.10)}
+}
+
+
+/* ===== PARENTS NAME LAYOUT: ALLOW NATURAL LINE BREAKS ===== */
+.parent .name{
+  white-space:normal !important;
+  max-width:360px;
+  margin:0 auto;
+  font-size:24px;
+  line-height:1.45;
+}
+.parent .name .parent-line{
+  display:block;
+}
+
+
+/* ===== FINAL ENTOURAGE ICON + PARENT REFINEMENTS ===== */
+.roles.four .role{padding:22px 14px}
+.icon-svg{
+  width:78px;
+  height:62px;
+  margin:0 auto 8px;
+  display:flex !important;
+  align-items:center;
+  justify-content:center;
+  color:#7f9caf !important;
+  filter:none !important;
+}
+.icon-svg svg{
+  width:100%;
+  height:100%;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:2.2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.roles.four .role h3{
+  font-size:21px;
+  letter-spacing:.12em;
+  margin-top:4px;
+}
+.roles.four .role .name{
+  font-size:20px;
+  color:#526d7f;
+}
+.parent .name{
+  color:#526d7f;
+  font-size:24px;
+  line-height:1.5;
+}
+.parent .parent-line{
+  display:block;
+  min-height:1.5em;
+}
+@media(max-width:850px){
+  .icon-svg{width:70px;height:58px}
+}
+
+
+
+/* ===== ROMANTIC SECTION TRANSITIONS ===== */
+/* Soft cinematic reveal for every major chapter without changing the layout */
+section:not(.hero) .wrap,
+section:not(.hero) .story-grid{
+  opacity:0;
+  transform:translateY(34px) scale(.985);
+  filter:blur(4px);
+  transition:
+    opacity 1.15s cubic-bezier(.22,.61,.36,1),
+    transform 1.35s cubic-bezier(.16,1,.3,1),
+    filter 1.15s ease;
+}
+section:not(.hero).is-visible .wrap,
+section:not(.hero).is-visible .story-grid{
+  opacity:1;
+  transform:none;
+  filter:blur(0);
+}
+
+/* Gentle stagger inside each section */
+.is-visible .section-head,
+.is-visible .gallery-head,
+.is-visible .story-photo,
+.is-visible .story-copy,
+.is-visible .detail,
+.is-visible .ent-page,
+.is-visible .final-card,
+.is-visible .closing-photo,
+.is-visible .intro h2,
+.is-visible .intro p,
+.is-visible .intro .rule{
+  animation:romanticRise .9s cubic-bezier(.16,1,.3,1) both;
+}
+.is-visible .story-photo{animation-delay:.10s}
+.is-visible .story-copy{animation-delay:.20s}
+.is-visible .detail:nth-child(1){animation-delay:.05s}
+.is-visible .detail:nth-child(2){animation-delay:.13s}
+.is-visible .detail:nth-child(3){animation-delay:.21s}
+.is-visible .final-card:nth-child(1){animation-delay:.08s}
+.is-visible .final-card:nth-child(2){animation-delay:.16s}
+.is-visible .final-card:nth-child(3){animation-delay:.24s}
+.is-visible .closing-photo{animation-delay:.18s}
+
+@keyframes romanticRise{
+  from{opacity:0;transform:translateY(26px);filter:blur(3px)}
+  to{opacity:1;transform:translateY(0);filter:blur(0)}
+}
+
+/* Cinematic transition veil between chapters */
+section:not(.hero):before{
+  content:"";
+  position:absolute;
+  left:8%; right:8%; top:-1px;
+  height:110px;
+  pointer-events:none;
+  background:linear-gradient(180deg,rgba(255,255,255,0),rgba(255,255,255,.18),rgba(255,255,255,0));
+  opacity:.55;
+  transform:translateY(-30px);
+  transition:transform 1.4s cubic-bezier(.16,1,.3,1),opacity 1s ease;
+}
+section:not(.hero).is-visible:before{transform:translateY(0);opacity:1}
+
+/* Final photo receives a slower, more cinematic entrance */
+.closing-photo{transform-origin:center center}
+.is-visible .closing-photo-overlay{
+  animation:closingReveal 1.6s cubic-bezier(.16,1,.3,1) .55s both;
+}
+@keyframes closingReveal{
+  from{opacity:0;transform:translateY(24px) scale(.98)}
+  to{opacity:1;transform:none}
+}
+
+/* Respect accessibility preferences */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  section:not(.hero) .wrap,section:not(.hero) .story-grid{opacity:1;transform:none;filter:none}
+}
+
+
+/* ===== MOBILE-FIRST INVITATION REFINEMENT ===== */
+html{background:#eef4f8}
+body{font-size:16px;line-height:1.5}
+.wrap{width:min(100% - 28px,720px)}
+/* Landing page: cinematic poster with the invitation copy underneath */
+.hero{min-height:auto;display:block;text-align:center;background:linear-gradient(180deg,#f7fbfd,#e8f1f6);padding:14px 0 34px;overflow:visible}
+.hero:before{display:none}
+.hero-poster{width:min(100% - 28px,720px);height:min(68vh,620px);min-height:390px;margin:0 auto;border-radius:0 0 28px 28px;background:url("landingpage.jpg") center/cover no-repeat;box-shadow:0 18px 45px rgba(58,82,98,.22);position:relative;overflow:hidden}
+.hero-poster:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,29,40,.04) 45%,rgba(15,29,40,.25))}
+.hero-content{padding:30px 20px 0;max-width:760px;margin:auto}
+.hero .kicker{font-size:9px;color:#718e9f;letter-spacing:.28em}
+.movie-tagline{font-family:"Cormorant Garamond",serif;font-size:clamp(18px,4.7vw,26px);line-height:1.25;color:#6f8492;font-style:italic;max-width:460px;margin:10px auto 20px}
+.hero .names{font-size:clamp(60px,15vw,108px);gap:2px;margin:10px auto 18px;line-height:.82;color:#526d7f;text-shadow:none}
+.hero .name-line{white-space:nowrap}
+.hero .jon,.hero .vennie{transform:none}
+.hero .and{font-size:.33em;color:#8ea8ba;line-height:.45}
+.hero .date{font-size:clamp(19px,4.5vw,25px);letter-spacing:.16em;margin-top:20px;color:#526d7f}
+.hero .place{font-size:9px;line-height:1.6;letter-spacing:.14em;padding:0 10px;color:#6f8492}
+.hero-cta{display:inline-block;margin-top:24px;padding:12px 18px;border-radius:999px;background:#d8e7ef;color:#587284;font-size:9px;font-weight:600;letter-spacing:.16em}
+/* Better section rhythm for phone */
+.intro,.gallery-section,.story,.details,.ent,.final{padding:68px 0}
+.intro{padding-top:76px}
+.intro h2,.gallery-head h2,.section-head h2,.story-copy h2,.ent-title{font-size:clamp(42px,11vw,68px);line-height:.95}
+.intro p{font-size:21px;padding:0 4px}
+.rule{margin:18px 0}.rule:before,.rule:after{width:72px}
+/* Gallery becomes a swipe-friendly cinematic deck */
+.gallery-head{margin-bottom:28px}
+.gallery-stage{height:min(72vw,520px);min-height:340px;border-radius:22px;overflow:hidden}
+.slide{border-radius:22px}
+.slide-copy{left:8%;right:8%;bottom:8%;max-width:none;text-align:left}
+.slide-copy h3{font-size:clamp(31px,8vw,48px);line-height:1.02}
+.gallery-controls{gap:6px;margin-top:16px;overflow-x:auto;padding:5px 2px;justify-content:flex-start}
+.dot{flex:0 0 22px;height:3px;border-radius:4px}
+.gallery-thumbs{display:none}
+/* Story card is stacked and easy to read */
+.story-grid{border-radius:24px;overflow:hidden;min-height:0}
+.story-photo{min-height:340px}
+.story-copy{padding:38px 24px}
+.story-copy h2{margin:8px 0 18px}
+.story-item{padding:18px 0}
+.story-item h3{font-size:27px}.story-item p{font-size:20px;line-height:1.5}
+/* Details become prominent invitation cards */
+.detail-grid{border:0;background:transparent;box-shadow:none;gap:14px}
+.detail{border:0!important;border-radius:20px;background:#fff;padding:30px 22px;box-shadow:0 10px 28px rgba(91,118,135,.09)}
+.detail h3{font-size:26px;margin:8px 0}.detail p{font-size:20px}
+/* Entourage: compact, no horizontal crowding */
+.ent-page{padding:34px 16px;border-radius:22px;margin-bottom:20px;min-height:0}
+.ent-page:before{inset:8px;border-radius:16px}
+.ent-title{font-size:clamp(40px,10vw,62px);letter-spacing:.04em}
+.ent-intro{font-size:20px;padding:0 4px}
+.parents{gap:14px;margin:22px auto 28px}
+.parent{padding:24px 14px;min-height:0;background:rgba(255,255,255,.55);border-radius:16px}
+.parent .name{font-size:21px}.sponsors{gap:0;margin-top:12px}
+.sponsor{font-size:19px;padding:11px 8px;border-bottom:1px solid var(--line);white-space:normal}
+.toprow{border-radius:16px;overflow:hidden}.honor{padding:22px 14px}.honor h2{font-size:24px}.honor p{font-size:21px}
+.roles,.roles.four{grid-template-columns:1fr 1fr;gap:0;border-radius:16px;overflow:hidden}
+.role{min-height:175px;padding:22px 12px;border-top:1px solid var(--line)!important;border-left:1px solid var(--line)!important;background:rgba(255,255,255,.55)}
+.role:nth-child(1),.role:nth-child(2){border-top:0!important}.role:nth-child(odd){border-left:0!important}
+.roles:not(.four) .role:nth-child(3){grid-column:1/-1}
+.role h3,.roles.four .role h3{font-size:17px;letter-spacing:.08em}.role .name,.roles.four .role .name{font-size:17px;line-height:1.35}
+.icon-svg{width:62px;height:50px}
+.party{border-radius:16px;overflow:hidden}.group{padding:24px 16px}.group h3{font-size:25px}.list{font-size:19px;line-height:1.65}
+/* Final details use clear tap-sized cards */
+.final-grid{border:0;background:transparent;box-shadow:none;gap:14px}
+.final-card{min-height:0;border:0!important;border-radius:20px;padding:32px 22px;box-shadow:0 10px 28px rgba(91,118,135,.09)}
+.final-card h3{font-size:31px}.final-card p{font-size:20px}.btn{margin-top:18px;width:100%;padding:16px 12px;border-radius:999px;text-align:center}
+.closing-photo{margin-top:24px;min-height:520px;border-radius:24px;background:url("final.jpg") center/cover no-repeat}
+.closing-photo:before{inset:10px;border-radius:18px}.closing-photo-overlay{padding:70px 18px 38px}.closing-photo-overlay h2{font-size:clamp(40px,11vw,60px)}
+.closing-photo-overlay .verse{font-size:22px}.closing-photo-overlay .verse-ref{margin-bottom:32px}
+/* Mobile navigation and motion polish */
+@media(max-width:480px){
+  .wrap{width:calc(100% - 24px)}
+  .hero{padding-top:10px}.hero-poster{width:calc(100% - 20px);height:58vh;min-height:360px;border-radius:0 0 24px 24px}
+  .hero-content{padding:26px 14px 0}.movie-tagline{font-size:20px}.hero .names{font-size:18vw}.hero .date{font-size:18px;letter-spacing:.12em}
+  .intro,.gallery-section,.story,.details,.ent,.final{padding:58px 0}.story-photo{min-height:300px}.gallery-stage{height:108vw;min-height:320px}
+  .roles,.roles.four{grid-template-columns:1fr}.role,.role:nth-child(n){border-left:0!important}.role:nth-child(n+2){border-top:1px solid var(--line)!important}.roles:not(.four) .role:nth-child(3){grid-column:auto}
+  .final-card{padding:28px 18px}.closing-photo{min-height:500px}
+}
+@media(min-width:851px){
+  .hero{display:grid;place-items:center;min-height:100vh;padding:0;background:linear-gradient(90deg,rgba(235,244,249,.68),rgba(214,229,238,.18),rgba(235,244,249,.55)),url("landingpage.jpg") center/cover no-repeat}
+  .hero-poster{display:none}.hero-content{padding:90px 20px;background:rgba(255,255,255,.22);backdrop-filter:blur(2px);border-radius:28px}
+  .hero .names{font-size:clamp(76px,10vw,145px)}.movie-tagline{font-size:28px}
+}
+
+</style>
+</head>
+<body>
+
+<section class="hero bg-grain">
+  <div class="hero-poster" role="img" aria-label="Jon Carlo and Vennie Ann"></div>
+  <div class="hero-content">
+    <div class="kicker">A new chapter begins</div>
+    <div class="movie-tagline">The story of two paths becoming one forever.</div>
+    <div class="names">
+      <span class="name-line jon">Jon Carlo</span>
+      <span class="and">&amp;</span>
+      <span class="name-line vennie">Vennie Ann</span>
+    </div>
+    <div class="rule">✦</div>
+    <div class="date">OCTOBER 10, 2026</div>
+    <div class="place">Sto. Niño Parish Church • Lipa City, Batangas</div>
+    <div class="hero-cta">SCROLL TO OPEN OUR STORY ↓</div>
+  </div>
+</section>
+
+<section class="intro">
+ <div class="wrap">
+  <div class="kicker">A celebration of love</div>
+  <h2>Our forever begins here.</h2>
+  <div class="rule">✦</div>
+  <p>With joyful hearts, we invite you to witness and celebrate the beginning of the next chapter of our love story.</p>
+ </div>
+</section>
+
+<section class="gallery-section">
+ <div class="wrap">
+  <div class="gallery-head"><div class="kicker">A glimpse of us</div><h2>OUR GALLERY</h2><div class="rule">✦</div></div>
+  <div class="gallery-stage">
+   <div class="slide active" style="background-image:url('370.jpg')"><div class="slide-copy"><span>Chapter One</span><h3>Every story starts somewhere.</h3></div></div>
+   <div class="slide" style="background-image:url('371.jpg')"><div class="slide-copy"><span>Chapter Two</span><h3>Then, we found our way back.</h3></div></div>
+   <div class="slide" style="background-image:url('372.jpg')"><div class="slide-copy"><span>Chapter Three</span><h3>And now, forever.</h3></div></div>
+   <div class="slide" style="background-image:url('373.jpg')"><div class="slide-copy"><span>Little Moments</span><h3>The kind we want to remember forever.</h3></div></div>
+   <div class="slide" style="background-image:url('374.jpg')"><div class="slide-copy"><span>Our Journey</span><h3>Side by side, wherever life leads.</h3></div></div>
+   <div class="slide" style="background-image:url('375.jpg')"><div class="slide-copy"><span>Closer</span><h3>Home has always been with each other.</h3></div></div>
+   <div class="slide" style="background-image:url('376.jpg')"><div class="slide-copy"><span>Us</span><h3>Just as we are, and exactly where we belong.</h3></div></div>
+   <div class="slide" style="background-image:url('377.jpg')"><div class="slide-copy"><span>Everyday Magic</span><h3>Love in all the little moments.</h3></div></div>
+   <div class="slide" style="background-image:url('378.jpg')"><div class="slide-copy"><span>The Beginning</span><h3>A beautiful chapter before forever.</h3></div></div>
+   <div class="slide" style="background-image:url('379.jpg')"><div class="slide-copy"><span>Forever</span><h3>And this is only the beginning.</h3></div></div>
+  </div>
+  <div class="gallery-controls"><button class="dot active"></button><button class="dot"></button><button class="dot"></button><button class="dot"></button><button class="dot"></button><button class="dot"></button><button class="dot"></button><button class="dot"></button><button class="dot"></button><button class="dot"></button></div>
+  <div class="gallery-thumbs">
+   <button class="thumb active" style="background-image:url('370.jpg')"></button>
+   <button class="thumb" style="background-image:url('371.jpg')"></button>
+   <button class="thumb" style="background-image:url('372.jpg')"></button>
+   <button class="thumb" style="background-image:url('373.jpg')"></button>
+   <button class="thumb" style="background-image:url('374.jpg')"></button>
+   <button class="thumb" style="background-image:url('375.jpg')"></button>
+   <button class="thumb" style="background-image:url('376.jpg')"></button>
+   <button class="thumb" style="background-image:url('377.jpg')"></button>
+   <button class="thumb" style="background-image:url('378.jpg')"></button>
+   <button class="thumb" style="background-image:url('379.jpg')"></button>
+  </div>
+ </div>
+</section>
+
+<section class="story">
+ <div class="wrap">
+  <div class="story-grid">
+   <div class="story-photo"></div>
+   <div class="story-copy">
+    <div class="kicker">Our story</div><h2>Written in time.</h2>
+    <div class="story-item"><h3>The Beginning</h3><p>Two paths first crossed years ago in the same high school classroom, as nothing more than distant classmates.</p></div>
+    <div class="story-item"><h3>The Growth</h3><p>Time passed, our paths realigned, and an unexpected spark transformed two old acquaintances into best friends, a calm harbor and a true home.</p></div>
+    <div class="story-item"><h3>The Future</h3><p>Now, we are ready to turn the page together and begin a lifetime of shared dreams, endless laughter, and beautiful tomorrows.</p></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="details">
+ <div class="wrap">
+  <div class="section-head"><div class="kicker">Save the date</div><h2>THE CELEBRATION</h2><div class="rule">✦</div></div>
+  <div class="detail-grid">
+   <div class="detail"><div class="symbol">✦</div><h3>When</h3><p>Saturday<br><strong>October 10, 2026</strong><br>8:30 AM Ceremony</p></div>
+   <div class="detail"><div class="symbol">✦</div><h3>Where</h3><p><strong>Sto. Niño Parish Church</strong><br>Lipa City, Batangas</p></div>
+   <div class="detail"><div class="symbol">✦</div><h3>Reception</h3><p><strong>Mendoza Residence</strong><br>Celebration to follow</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="ent">
+ <div class="wrap">
+  <div class="ent-page">
+   <div class="ent-content">
+    <div class="kicker" style="text-align:center">With love and gratitude</div><h2 class="ent-title">THE ENTOURAGE</h2><div class="rule">✦</div>
+    <p class="ent-intro">We are blessed to be surrounded by the people who have shared our journey and who will stand beside us as we begin our forever.</p>
+    <div class="parents">
+     <div class="parent"><h3>Parents of the Bride</h3><div class="name"><span class="parent-line">Aurora Mendoza &amp;</span><span class="parent-line"><span class="gold">✝</span> Buenvenido Mendoza</span></div></div>
+     <div class="parent"><h3>Parents of the Groom</h3><div class="name"><span class="parent-line">Florencia Latina &amp;</span><span class="parent-line">Cesto Latina</span></div></div>
+    </div>
+    <div class="sep"></div><div class="label">Principal Sponsors</div>
+    <div class="sponsors">
+     <div class="sponsor">Cynthia Latina &amp; Remegio Latina</div><div class="sponsor">Annaliza Navarro &amp; Allan Navarro</div>
+     <div class="sponsor">Rosalinda Vasquez &amp; Roger Aguila</div><div class="sponsor">Divine Chavez &amp; Anthony Chavez</div>
+     <div class="sponsor">Yolanda Cadeliña &amp; Esteban Cadeliña</div><div class="sponsor">Vilma Grimaldo &amp; Jr Grimaldo</div>
+     <div class="sponsor">Jossie Alvez &amp; Ronald Alvez</div><div class="sponsor">Julita Bahala &amp; Percival Bahala</div>
+     <div class="sponsor">Conie Abu</div><div class="sponsor">Joel Mabilog &amp; Jennifer Mabilog</div>
+    </div>
+   </div>
+  </div>
+
+  <div class="ent-page">
+   <div class="ent-content">
+    <div class="toprow"><div class="honor"><h2>Maid of Honor</h2><p>Vivien Ann Alejandro</p></div><div class="honor"><h2>Best Man</h2><p>Sherwin Glericson Norsio</p></div></div>
+    <div class="sep"></div>
+    <div class="roles">
+     <div class="role"><div class="icon">♧</div><h3>Veil</h3><div class="name">Aileen Moren &amp; Reniel Del Mundo</div></div>
+     <div class="role"><div class="icon">∞</div><h3>Cord</h3><div class="name">Hairo Amito &amp; Raymon Siman</div></div>
+     <div class="role"><div class="icon">🕯</div><h3>Candle</h3><div class="name">Bianca Mendoza &amp; Joshua Torres</div></div>
+    </div>
+    <div class="sep"></div>
+    <div class="party">
+     <div class="group"><h3>Bridesmaids</h3><div class="list"><span>Judy Mae Dela Roca</span><span>Margarette Arguelles</span><span>Veronica Cadeliña</span><span>Nicole Abu</span><span>Irish Latina</span><span>Jonalyn Gonzales</span></div></div>
+     <div class="group"><h3>Groomsmen</h3><div class="list"><span>Deary Jun Delos Santos</span><span>Eury Austria</span><span>Joseph Salita</span><span>Cesar Leviste</span><span>Windell Dimayuga</span><span>Jihu Duero</span></div></div>
+    </div>
+    <div class="sep"></div>
+    <div class="roles four">
+     <div class="role">
+       <div class="icon icon-svg" aria-label="Bible">
+         <svg viewBox="0 0 100 70" aria-hidden="true">
+           <path d="M8 16c14-8 28-7 42 2v40c-14-9-28-10-42-2z"/>
+           <path d="M92 16c-14-8-28-7-42 2v40c14-9 28-10 42-2z"/>
+           <path d="M50 18v40"/>
+           <path d="M50 10v13M43.5 16.5h13"/>
+           <path d="M17 29c10-4 20-3 27 1M17 39c10-4 20-3 27 1"/>
+           <path d="M83 29c-10-4-20-3-27 1M83 39c-10-4-20-3-27 1"/>
+         </svg>
+       </div>
+       <h3>Bible</h3><div class="name">Caile Del Mundo</div>
+     </div>
+     <div class="role">
+       <div class="icon icon-svg" aria-label="Arras">
+         <svg viewBox="0 0 100 70" aria-hidden="true">
+           <ellipse cx="36" cy="37" rx="19" ry="13"/>
+           <ellipse cx="58" cy="26" rx="19" ry="13"/>
+           <ellipse cx="64" cy="44" rx="19" ry="13"/>
+           <path d="M30 37h12M52 26h12M58 44h12"/>
+           <circle cx="36" cy="37" r="3"/><circle cx="58" cy="26" r="3"/><circle cx="64" cy="44" r="3"/>
+         </svg>
+       </div>
+       <h3>Arras</h3><div class="name">Aslan Atenta</div>
+     </div>
+     <div class="role">
+       <div class="icon icon-svg" aria-label="Wedding Rings">
+         <svg viewBox="0 0 100 70" aria-hidden="true">
+           <circle cx="40" cy="39" r="20"/>
+           <circle cx="61" cy="31" r="20"/>
+           <path d="M73 12l5-10 5 10z"/>
+           <path d="M70 12h16"/>
+         </svg>
+       </div>
+       <h3>Ring</h3><div class="name">Jubail Galicha</div>
+     </div>
+     <div class="role">
+       <div class="icon icon-svg" aria-label="Flower Girl">
+         <svg viewBox="0 0 100 70" aria-hidden="true">
+           <circle cx="50" cy="15" r="8"/>
+           <path d="M43 25c-8 7-11 16-12 30h38c-1-14-4-23-12-30"/>
+           <path d="M43 25c4 3 10 4 14 0"/>
+           <path d="M38 31l-12 12M62 31l12 12"/>
+           <path d="M50 55v10"/>
+           <circle cx="26" cy="43" r="3"/><circle cx="21" cy="39" r="3"/><circle cx="31" cy="38" r="3"/>
+           <path d="M23 47c5 5 10 6 15 6"/>
+           <path d="M45 7l-4-5M50 7V1M55 7l4-5"/>
+         </svg>
+       </div>
+       <h3>Flower Girl</h3><div class="name">Arabella Resma</div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="final">
+ <div class="wrap">
+  <div class="section-head"><div class="kicker">The final details</div><h2>THE CELEBRATION</h2><div class="rule">✦</div></div>
+  <div class="final-grid">
+   <div class="final-card"><div class="big">✦</div><h3>Celebration</h3><p>Join us as we celebrate our love and begin our forever surrounded by the people closest to our hearts.</p></div>
+   <div class="final-card"><div class="big">♢</div><h3>Attire</h3><p>Semi-formal or casual attire in light colors.<br><br>Come comfortable, elegant, and ready to celebrate.</p></div>
+   <div class="final-card"><div class="big">✉</div><h3>Mailbox</h3><p>Leave us a heartfelt message and a memory for our wedding day.</p><a href="#" class="btn">Open the Mailbox</a></div>
+  </div>
+  <div class="closing-photo" aria-label="Jon Carlo and Vennie Ann">
+    <div class="closing-photo-overlay">
+      <div class="kicker">With love</div>
+      <h2>Thank You for Being Part of Our Story</h2>
+      <p class="verse">“And above all these things put on love, which binds everything together in perfect harmony.”</p>
+      <p class="verse-ref">— Colossians 3:14</p>
+      <p class="closing-names">JON CARLO &amp; VENNIE ANN</p>
+      <p class="closing-date">10 • 10 • 2026</p>
+    </div>
+  </div>
+ </div>
+</section>
+
+<script>
+const slides=[...document.querySelectorAll('.slide')];
+const dots=[...document.querySelectorAll('.dot')];
+const thumbs=[...document.querySelectorAll('.thumb')];
+let current=0, timer;
+
+function showSlide(i){
+ current=(i+slides.length)%slides.length;
+ slides.forEach((s,n)=>s.classList.toggle('active',n===current));
+ dots.forEach((d,n)=>d.classList.toggle('active',n===current));
+ thumbs.forEach((t,n)=>t.classList.toggle('active',n===current));
+ resetTimer();
+}
+function resetTimer(){
+ clearInterval(timer);
+ timer=setInterval(()=>showSlide(current+1),5000);
+}
+dots.forEach((d,i)=>d.addEventListener('click',()=>showSlide(i)));
+thumbs.forEach((t,i)=>t.addEventListener('click',()=>showSlide(i)));
+let touchStartX=0;
+const galleryStage=document.querySelector('.gallery-stage');
+galleryStage?.addEventListener('touchstart',e=>{touchStartX=e.changedTouches[0].screenX},{passive:true});
+galleryStage?.addEventListener('touchend',e=>{const dx=e.changedTouches[0].screenX-touchStartX;if(Math.abs(dx)>40)showSlide(current+(dx<0?1:-1))},{passive:true});
+resetTimer();
+
+/* Romantic scroll reveal — keeps the original page structure intact */
+const romanticSections=[...document.querySelectorAll('section:not(.hero)')];
+if ('IntersectionObserver' in window){
+  const romanticObserver=new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('is-visible');
+        romanticObserver.unobserve(entry.target);
+      }
+    });
+  },{threshold:.16,rootMargin:'0px 0px -8% 0px'});
+  romanticSections.forEach(section=>romanticObserver.observe(section));
+}else{
+  romanticSections.forEach(section=>section.classList.add('is-visible'));
+}
+</script>
+</body>
+</html>
