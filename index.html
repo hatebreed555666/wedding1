@@ -471,6 +471,46 @@ section:not(.hero).is-visible:before{transform:translateY(0);opacity:1}
   }
 }
 
+
+/* ===== MOBILE GALLERY SWIPE ===== */
+.gallery-stage{
+  touch-action:pan-y;
+  cursor:grab;
+}
+.gallery-stage.swiping{
+  cursor:grabbing;
+}
+.gallery-stage .slide{
+  will-change:transform,opacity;
+}
+@media(max-width:700px){
+  .gallery-stage{
+    -webkit-user-select:none;
+    user-select:none;
+  }
+  .gallery-stage::after{
+    content:"Swipe left or right";
+    position:absolute;
+    left:50%;
+    bottom:16px;
+    transform:translateX(-50%);
+    z-index:4;
+    padding:6px 11px;
+    border-radius:999px;
+    background:rgba(255,255,255,.72);
+    color:#547487;
+    font:600 8px/1 Montserrat,sans-serif;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    pointer-events:none;
+    opacity:.78;
+  }
+}
+
+
+/* Gallery thumbnails removed to keep the mobile layout clean */
+.gallery-thumbs{display:none!important}
+
 </style>
 </head>
 <body>
@@ -518,18 +558,6 @@ section:not(.hero).is-visible:before{transform:translateY(0);opacity:1}
    <div class="slide" style="background-image:url('379.jpg')"><div class="slide-copy"><span>Forever</span><h3>And this is only the beginning.</h3></div></div>
   </div>
   <div class="gallery-controls"><button class="dot active"></button><button class="dot"></button><button class="dot"></button><button class="dot"></button><button class="dot"></button><button class="dot"></button><button class="dot"></button><button class="dot"></button><button class="dot"></button><button class="dot"></button></div>
-  <div class="gallery-thumbs">
-   <button class="thumb active" style="background-image:url('370.jpg')"></button>
-   <button class="thumb" style="background-image:url('371.jpg')"></button>
-   <button class="thumb" style="background-image:url('372.jpg')"></button>
-   <button class="thumb" style="background-image:url('373.jpg')"></button>
-   <button class="thumb" style="background-image:url('374.jpg')"></button>
-   <button class="thumb" style="background-image:url('375.jpg')"></button>
-   <button class="thumb" style="background-image:url('376.jpg')"></button>
-   <button class="thumb" style="background-image:url('377.jpg')"></button>
-   <button class="thumb" style="background-image:url('378.jpg')"></button>
-   <button class="thumb" style="background-image:url('379.jpg')"></button>
-  </div>
  </div>
 </section>
 
@@ -709,6 +737,54 @@ if ('IntersectionObserver' in window){
 }else{
   romanticSections.forEach(section=>section.classList.add('is-visible'));
 }
+
+/* ===== SWIPE GALLERY ON MOBILE ===== */
+const galleryStage = document.querySelector('.gallery-stage');
+
+if (galleryStage && slides.length > 1) {
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchMoved = false;
+
+  galleryStage.addEventListener('touchstart', (e) => {
+    const t = e.changedTouches[0];
+    touchStartX = t.clientX;
+    touchStartY = t.clientY;
+    touchMoved = false;
+    galleryStage.classList.add('swiping');
+    clearInterval(timer);
+  }, {passive:true});
+
+  galleryStage.addEventListener('touchmove', (e) => {
+    const t = e.changedTouches[0];
+    const dx = t.clientX - touchStartX;
+    const dy = t.clientY - touchStartY;
+
+    if (Math.abs(dx) > 12 && Math.abs(dx) > Math.abs(dy)) {
+      touchMoved = true;
+    }
+  }, {passive:true});
+
+  galleryStage.addEventListener('touchend', (e) => {
+    const t = e.changedTouches[0];
+    const dx = t.clientX - touchStartX;
+    const dy = t.clientY - touchStartY;
+
+    galleryStage.classList.remove('swiping');
+
+    if (touchMoved && Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy)) {
+      showSlide(current + (dx < 0 ? 1 : -1));
+    } else {
+      resetTimer();
+    }
+  }, {passive:true});
+
+  galleryStage.addEventListener('touchcancel', () => {
+    galleryStage.classList.remove('swiping');
+    resetTimer();
+  }, {passive:true});
+}
+
 </script>
 </body>
 </html>
