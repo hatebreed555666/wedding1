@@ -68,7 +68,39 @@ url("landingpage.jpg") center/cover no-repeat}
 /* INTRO */
 .intro{padding:130px 0;text-align:center;background:linear-gradient(180deg,#101319,#17212b)}
 .intro h2{font-size:clamp(48px,6vw,82px);letter-spacing:.04em;margin:10px 0}
-.intro p{max-width:700px;margin:25px auto;color:#d9e2e9;font-family:"Cormorant Garamond",serif;font-size:25px;line-height:1.55}
+.intro p{max-width:700px;margin:25px auto;color:#657b89;font-family:"Cormorant Garamond",serif;font-size:25px;line-height:1.55}
+
+
+/* PARENTS BLESSING */
+.parents-blessing{padding:95px 0 100px;background:linear-gradient(180deg,#ffffff,#eef4f8);text-align:center;overflow:hidden}
+.parents-blessing-inner{max-width:1040px;margin:auto}
+.parents-blessing h2{font-size:clamp(34px,4.6vw,58px);margin:10px auto 16px;line-height:1.08;font-weight:500;letter-spacing:.02em;max-width:900px}
+.blessing-parents{display:grid;grid-template-columns:1fr 90px 1fr;align-items:center;margin:52px auto 0;max-width:900px}
+.blessing-family{padding:30px 24px 34px;display:flex;flex-direction:column;justify-content:center;min-height:175px}
+.family-label{font-family:"Cormorant Garamond",serif;text-transform:uppercase;letter-spacing:.14em;font-size:16px;color:#718b9c;margin-bottom:13px}
+.family-names{font-family:"Cormorant Garamond",serif;font-size:25px;font-weight:600;line-height:1.5;color:#4f687a}
+.family-names.deceased{color:#5f7788}
+.blessing-divider{width:70px;height:125px;justify-self:center;position:relative;display:flex;align-items:center;justify-content:center}
+.blessing-divider::before{content:"";position:absolute;top:10px;bottom:8px;left:50%;width:1px;background:linear-gradient(to bottom,transparent,rgba(127,154,174,.55) 15%,rgba(127,154,174,.55) 85%,transparent);transform:translateX(-50%)}
+.blessing-flower{position:relative;z-index:1;width:46px;height:112px;display:block}
+.blessing-flower .stem{fill:none;stroke:#7f9aae;stroke-width:1.3;stroke-linecap:round}
+.blessing-flower .petal,.blessing-flower .leaf{fill:#e6eef4;stroke:#6f8ca1;stroke-width:1.2}
+.blessing-flower .center{fill:#ffffff;stroke:#6f8ca1;stroke-width:1.2}
+@media(max-width:700px){
+ .parents-blessing{padding:72px 0 78px;background:linear-gradient(180deg,#ffffff,#eef4f8)}
+ .parents-blessing h2{font-size:34px;line-height:1.12;padding:0 10px;max-width:360px}
+ .parents-blessing .kicker{font-size:10px;letter-spacing:.2em}
+ .blessing-parents{grid-template-columns:1fr;margin-top:34px;max-width:360px}
+ .blessing-family{min-height:0;padding:26px 16px 28px}
+ .family-label{font-size:12px;margin-bottom:8px}
+ .family-names{font-size:22px;line-height:1.4}
+ .blessing-divider{width:54px;height:92px;margin:0 auto}
+ .blessing-divider::before{top:4px;bottom:4px}
+ .blessing-flower{width:38px;height:84px}
+}@media(max-width:390px){
+ .parents-blessing h2{font-size:31px}
+ .family-names{font-size:21px}
+}
 
 /* GALLERY */
 .gallery-section{padding:110px 0 130px;background:#17212b;overflow:hidden}
@@ -785,6 +817,14 @@ section, .wrap, .hero, .hero-content, .gallery-section, .gallery-stage,
   .detail-icon{width:40px;height:40px;margin-bottom:7px}
   .detail h3{font-size:23px;margin:8px 0}
 }
+/* ===== PARENTS BLESSING TEXT CONTRAST ===== */
+.parents-blessing .family-names{color:#4f687a}
+.parents-blessing .family-names.deceased{color:#5f7788}
+.parents-blessing .family-label{color:#718b9c}
+@media(max-width:700px){
+ .parents-blessing .family-names{color:#4f687a}
+ .parents-blessing .family-names.deceased{color:#5f7788}
+}
 </style>
 </head>
 <body>
@@ -813,6 +853,44 @@ section, .wrap, .hero, .hero-content, .gallery-section, .gallery-stage,
   <h2>Our forever begins here.</h2>
   <div class="rule">✦</div>
   <p>With joyful hearts, we invite you to witness and celebrate the beginning of the next chapter of our love story.</p>
+ </div>
+</section>
+
+<!-- PARENTS BLESSING -->
+<section class="parents-blessing">
+ <div class="wrap">
+  <div class="parents-blessing-inner">
+   <div class="kicker">With love and gratitude</div>
+   <h2>Guided by the Love and Blessings of Our Parents</h2>
+   <div class="rule">✦</div>
+   <div class="blessing-parents">
+    <div class="blessing-family">
+     <span class="family-label">Parents of the Bride</span>
+     <div class="family-names">Aurora Mendoza</div>
+     <div class="family-names deceased">✝ Buenvenido Mendoza</div>
+    </div>
+    <div class="blessing-divider" aria-hidden="true">
+      <svg class="blessing-flower" viewBox="0 0 46 112" role="img" aria-label="floral divider">
+       <path class="stem" d="M23 109 C23 91 23 75 23 59 C23 48 23 37 23 23"/>
+       <path class="leaf" d="M23 78 C14 77 9 72 8 65 C16 65 21 69 23 78Z"/>
+       <path class="leaf" d="M23 68 C32 67 37 62 38 55 C30 55 25 59 23 68Z"/>
+       <path class="leaf" d="M23 54 C15 53 11 48 10 42 C17 42 21 46 23 54Z"/>
+       <path class="leaf" d="M23 45 C31 44 35 40 36 34 C29 34 25 38 23 45Z"/>
+       <ellipse class="petal" cx="23" cy="23" rx="6" ry="10" transform="rotate(0 23 23)"/>
+       <ellipse class="petal" cx="23" cy="23" rx="6" ry="10" transform="rotate(72 23 23)"/>
+       <ellipse class="petal" cx="23" cy="23" rx="6" ry="10" transform="rotate(144 23 23)"/>
+       <ellipse class="petal" cx="23" cy="23" rx="6" ry="10" transform="rotate(216 23 23)"/>
+       <ellipse class="petal" cx="23" cy="23" rx="6" ry="10" transform="rotate(288 23 23)"/>
+       <circle class="center" cx="23" cy="23" r="3.8"/>
+      </svg>
+    </div>
+    <div class="blessing-family">
+     <span class="family-label">Parents of the Groom</span>
+     <div class="family-names">Florencia Latina</div>
+     <div class="family-names">Cesto Latina</div>
+    </div>
+   </div>
+  </div>
  </div>
 </section>
 
