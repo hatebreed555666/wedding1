@@ -317,6 +317,26 @@ body{background:#eef4f8;color:#536979}
 
 
 
+/* ===== ENTOURAGE PARENTS: MOTIF CROSS + TWO-COLUMN MOBILE LAYOUT ===== */
+.parents{gap:0}
+.parent + .parent{border-left:1px solid var(--line)}
+.cross-mark{display:inline-flex;vertical-align:-0.18em;width:22px;height:22px;margin-right:5px;align-items:center;justify-content:center;color:#7f9caf}
+.cross-mark svg{width:100%;height:100%;fill:currentColor;stroke:currentColor;stroke-width:.55;stroke-linejoin:round}
+@media(max-width:850px){
+  .parents{grid-template-columns:1fr 1fr !important;gap:0 !important;margin-top:26px}
+  .parent{padding:24px 10px;min-height:150px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .parent h3{font-size:16px;letter-spacing:.07em;line-height:1.25;margin-bottom:10px}
+  .parent .name{font-size:19px;line-height:1.35}
+  .parent .parent-line{min-height:0}
+  .cross-mark{width:19px;height:19px;margin-right:3px}
+}
+@media(max-width:390px){
+  .parent{padding-left:7px;padding-right:7px}
+  .parent h3{font-size:14px}
+  .parent .name{font-size:17px}
+  .cross-mark{width:17px;height:17px}
+}
+
 /* ===== ROMANTIC GALLERY ENTRANCE ===== */
 .gallery-section{position:relative;isolation:isolate}
 .gallery-section::before{
@@ -788,7 +808,7 @@ section, .wrap, .hero, .hero-content, .gallery-section, .gallery-stage,
     <div class="kicker" style="text-align:center">With love and gratitude</div><h2 class="ent-title">THE ENTOURAGE</h2><div class="rule">✦</div>
     <p class="ent-intro">We are blessed to be surrounded by the people who have shared our journey and who will stand beside us as we begin our forever.</p>
     <div class="parents">
-     <div class="parent"><h3>Parents of the Bride</h3><div class="name"><span class="parent-line">Aurora Mendoza &amp;</span><span class="parent-line"><span class="gold">✝</span> Buenvenido Mendoza</span></div></div>
+     <div class="parent"><h3>Parents of the Bride</h3><div class="name"><span class="parent-line">Aurora Mendoza &amp;</span><span class="parent-line"><span class="cross-mark" aria-label="In loving memory"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M14 4h4v9h8v4h-8v11h-4V17H6v-4h8V4Z"></path><path d="M16 2.5v2M16 27.5v2" opacity=".35"></path></svg></span> Buenvenido Mendoza</span></div></div>
      <div class="parent"><h3>Parents of the Groom</h3><div class="name"><span class="parent-line">Florencia Latina &amp;</span><span class="parent-line">Cesto Latina</span></div></div>
     </div>
     <div class="sep"></div><div class="label">Principal Sponsors</div>
