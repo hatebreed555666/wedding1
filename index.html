@@ -81,7 +81,7 @@ url("landingpage.jpg") center/cover no-repeat}
 .family-names{font-family:"Cormorant Garamond",serif;font-size:25px;font-weight:600;line-height:1.5;color:#4f687a}
 .family-names.deceased{color:#5f7788}
 .blessing-divider{width:70px;height:125px;justify-self:center;position:relative;display:flex;align-items:center;justify-content:center}
-.blessing-divider::before{content:"";position:absolute;top:10px;bottom:8px;left:50%;width:1px;background:linear-gradient(to bottom,transparent,rgba(127,154,174,.55) 15%,rgba(127,154,174,.55) 85%,transparent);transform:translateX(-50%)}
+.blessing-divider::before{content:none!important}
 .blessing-flower{position:relative;z-index:1;width:46px;height:112px;display:block}
 .blessing-flower .stem{fill:none;stroke:#7f9aae;stroke-width:1.3;stroke-linecap:round}
 .blessing-flower .petal,.blessing-flower .leaf{fill:#e6eef4;stroke:#6f8ca1;stroke-width:1.2}
@@ -90,16 +90,16 @@ url("landingpage.jpg") center/cover no-repeat}
  .parents-blessing{padding:72px 0 78px;background:linear-gradient(180deg,#ffffff,#eef4f8)}
  .parents-blessing h2{font-size:34px;line-height:1.12;padding:0 10px;max-width:360px}
  .parents-blessing .kicker{font-size:10px;letter-spacing:.2em}
- .blessing-parents{grid-template-columns:1fr;margin-top:34px;max-width:360px}
- .blessing-family{min-height:0;padding:26px 16px 28px}
- .family-label{font-size:12px;margin-bottom:8px}
- .family-names{font-size:22px;line-height:1.4}
- .blessing-divider{width:54px;height:92px;margin:0 auto}
- .blessing-divider::before{top:4px;bottom:4px}
- .blessing-flower{width:38px;height:84px}
+ .blessing-parents{grid-template-columns:minmax(0,1fr) 44px minmax(0,1fr);margin-top:34px;max-width:390px;column-gap:2px}
+ .blessing-family{min-height:0;padding:18px 6px 20px}
+ .family-label{font-size:10px;letter-spacing:.12em;margin-bottom:7px;white-space:nowrap}
+ .family-names{font-size:17px;line-height:1.3}
+ .blessing-divider{width:44px;height:92px;margin:0 auto}
+ .blessing-divider::before{content:none!important}
+ .blessing-flower{width:32px;height:80px}
 }@media(max-width:390px){
  .parents-blessing h2{font-size:31px}
- .family-names{font-size:21px}
+ .family-label{font-size:9px}.family-names{font-size:15.5px;line-height:1.28}.blessing-parents{grid-template-columns:minmax(0,1fr) 38px minmax(0,1fr);max-width:360px}.blessing-divider{width:38px}.blessing-flower{width:28px;height:74px}
 }
 
 /* GALLERY */
