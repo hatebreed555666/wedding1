@@ -250,6 +250,28 @@ body{background:#eef4f8;color:#536979}
 }
 
 
+
+/* ===== ENTOURAGE: MOBILE-FIRST GRAND OPENING HEADER ===== */
+.ent-grand-opening{display:flex;align-items:center;justify-content:center;gap:14px;margin:0 auto 18px;max-width:460px;opacity:.95}
+.ent-grand-opening .grand-line{display:block;flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(217,195,154,.62));position:relative}
+.ent-grand-opening .grand-line:last-child{background:linear-gradient(90deg,rgba(217,195,154,.62),transparent)}
+.ent-grand-opening .grand-mark{width:30px;height:30px;border:1px solid rgba(217,195,154,.48);transform:rotate(45deg);display:grid;place-items:center;color:#d9c39a;font-size:11px;line-height:1}
+.ent-grand-opening .grand-mark::before{content:"";position:absolute;inset:5px;border:1px solid rgba(217,195,154,.18)}
+.ent-grand-opening .grand-mark{font-family:Georgia,serif}
+.ent-title{font-size:clamp(48px,5.4vw,62px);letter-spacing:.08em;line-height:1.05;margin:8px 0 10px}
+
+@media(max-width:700px){
+  .ent-grand-opening{gap:10px;max-width:280px;margin-bottom:14px}
+  .ent-grand-opening .grand-mark{width:24px;height:24px;font-size:9px}
+  .ent-grand-opening .grand-mark::before{inset:4px}
+  .ent-title{font-size:clamp(34px,10vw,42px);letter-spacing:.065em;line-height:1.05;margin:7px 0 8px}
+  .ent .kicker{font-size:10px;letter-spacing:.22em}
+}
+@media(max-width:390px){
+  .ent-grand-opening{max-width:240px}
+  .ent-title{font-size:32px;letter-spacing:.055em}
+}
+
 /* ===== FINAL ENTOURAGE ICON + PARENT REFINEMENTS ===== */
 .roles.four .role{padding:22px 14px}
 .icon-svg{
@@ -762,6 +784,7 @@ section, .wrap, .hero, .hero-content, .gallery-section, .gallery-stage,
  <div class="wrap">
   <div class="ent-page">
    <div class="ent-content">
+    <div class="ent-grand-opening" aria-hidden="true"><span class="grand-line"></span><span class="grand-mark">✦</span><span class="grand-line"></span></div>
     <div class="kicker" style="text-align:center">With love and gratitude</div><h2 class="ent-title">THE ENTOURAGE</h2><div class="rule">✦</div>
     <p class="ent-intro">We are blessed to be surrounded by the people who have shared our journey and who will stand beside us as we begin our forever.</p>
     <div class="parents">
