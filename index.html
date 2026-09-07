@@ -275,6 +275,63 @@ body{background:#eef4f8;color:#536979}
 
 
 
+/* ===== ROMANTIC GALLERY ENTRANCE ===== */
+.gallery-section{position:relative;isolation:isolate}
+.gallery-section::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,255,255,.72), rgba(255,255,255,0) 34%),
+    linear-gradient(180deg, rgba(255,255,255,.92) 0%, rgba(233,241,246,.55) 13%, rgba(233,241,246,0) 34%);
+  opacity:0;
+  transform:translateY(-18px);
+  transition:opacity 1.6s ease, transform 1.8s cubic-bezier(.16,1,.3,1);
+}
+.gallery-section::after{
+  content:"♥  ✦  ♥";
+  position:absolute;
+  top:18px;
+  left:50%;
+  z-index:1;
+  transform:translate(-50%,-10px) scale(.82);
+  font-size:13px;
+  letter-spacing:.42em;
+  color:rgba(127,156,175,.0);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 1.15s ease .18s, transform 1.35s cubic-bezier(.16,1,.3,1) .18s, color 1.15s ease .18s;
+}
+.gallery-section .wrap{position:relative;z-index:2}
+.gallery-section.is-visible::before{opacity:1;transform:none}
+.gallery-section.is-visible::after{
+  opacity:1;
+  transform:translate(-50%,0) scale(1);
+  color:rgba(127,156,175,.78);
+}
+.gallery-section.is-visible .gallery-head{
+  animation:galleryLoveIn 1.45s cubic-bezier(.16,1,.3,1) both;
+}
+.gallery-section.is-visible .gallery-stage{
+  animation:galleryStageIn 1.55s cubic-bezier(.16,1,.3,1) .16s both;
+}
+@keyframes galleryLoveIn{
+  0%{opacity:0;transform:translateY(30px) scale(.96);filter:blur(7px)}
+  55%{opacity:1;transform:translateY(-4px) scale(1.015);filter:blur(0)}
+  100%{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}
+}
+@keyframes galleryStageIn{
+  0%{opacity:0;transform:translateY(38px) scale(.975);filter:blur(5px)}
+  100%{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}
+}
+@media(max-width:700px){
+  .gallery-section::after{top:12px;font-size:11px;letter-spacing:.28em}
+  .gallery-section.is-visible .gallery-head{animation-duration:1.25s}
+  .gallery-section.is-visible .gallery-stage{animation-duration:1.35s}
+}
+
 /* ===== ROMANTIC SECTION TRANSITIONS ===== */
 /* Soft cinematic reveal for every major chapter without changing the layout */
 section:not(.hero) .wrap,
