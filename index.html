@@ -81,6 +81,10 @@ url("landingpage.jpg") center/cover no-repeat}
 .family-names{font-family:"Cormorant Garamond",serif;font-size:25px;font-weight:600;line-height:1.5;color:#4f687a}
 .family-names.deceased{color:#5f7788}
 .blessing-divider{width:70px;height:125px;justify-self:center;position:relative;display:flex;align-items:center;justify-content:center}
+/* Responsive alignment: use intrinsic layout instead of device-dependent offsets */
+.blessing-parents{align-items:start}
+.blessing-family{box-sizing:border-box;min-width:0}
+.family-label,.family-names{box-sizing:border-box}
 .blessing-divider::before{content:none!important}
 .blessing-flower{position:relative;z-index:1;width:46px;height:112px;display:block}
 .blessing-flower .stem{fill:none;stroke:#7f9aae;stroke-width:1.3;stroke-linecap:round}
@@ -90,23 +94,38 @@ url("landingpage.jpg") center/cover no-repeat}
  .parents-blessing{padding:72px 0 78px;background:linear-gradient(180deg,#ffffff,#eef4f8)}
  .parents-blessing h2{font-size:34px;line-height:1.12;padding:0 10px;max-width:360px}
  .parents-blessing .kicker{font-size:10px;letter-spacing:.2em}
- .blessing-parents{grid-template-columns:minmax(0,1fr) 44px minmax(0,1fr);margin-top:34px;max-width:390px;column-gap:2px}
- .blessing-family{min-height:0;padding:18px 6px 20px}
- .family-label{font-size:10px;letter-spacing:.12em;margin-bottom:7px;white-space:nowrap}
- .family-names{font-size:17px;line-height:1.3}
- .blessing-divider{width:44px;height:92px;margin:0 auto}
+ .blessing-parents{grid-template-columns:minmax(0,1fr) clamp(34px,10vw,44px) minmax(0,1fr);margin-top:34px;width:100%;max-width:520px;column-gap:clamp(4px,1.6vw,10px);align-items:start}
+ .blessing-family{min-width:0;min-height:0;padding:0 clamp(2px,1.2vw,8px);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center}
+ .family-label{font-size:clamp(9px,2.55vw,11px);letter-spacing:.10em;line-height:1.2;margin:0 0 9px;white-space:normal;min-height:2.4em;display:flex;align-items:flex-start;justify-content:center}
+ .family-names{font-size:clamp(15px,4.05vw,18px);line-height:1.28;margin:0;white-space:normal}
+ .blessing-divider{width:100%;height:94px;margin:0;display:flex;align-items:flex-start;justify-content:center;padding-top:2px}
  .blessing-divider::before{content:none!important}
- .blessing-flower{width:32px;height:80px}
-}@media(max-width:390px){
- .parents-blessing h2{font-size:31px}
- .family-label{font-size:9px}.family-names{font-size:15.5px;line-height:1.28}.blessing-parents{grid-template-columns:minmax(0,1fr) 38px minmax(0,1fr);max-width:360px}.blessing-divider{width:38px}.blessing-flower{width:28px;height:74px}
+ .blessing-flower{width:clamp(27px,7.5vw,34px);height:auto;display:block}
+ .blessing-cross{display:inline-flex;vertical-align:-0.14em;width:15px;height:15px;margin-left:3px;align-items:center;justify-content:center;color:#6f8ca1;flex:0 0 auto}
 }
-
-
-.blessing-cross{display:inline-flex;vertical-align:-0.14em;width:17px;height:17px;margin-left:4px;align-items:center;justify-content:center;color:#6f8ca1}
-.blessing-cross svg{width:100%;height:100%;fill:currentColor;stroke:currentColor;stroke-width:.55;stroke-linejoin:round}
-@media(max-width:700px){.blessing-parents .blessing-family:last-child{transform:translateY(-9px)}}
-@media(max-width:390px){.blessing-parents .blessing-family:last-child{transform:translateY(-7px)}.blessing-cross{width:15px;height:15px;margin-left:3px}}
+@media(max-width:390px){
+ .parents-blessing h2{font-size:31px}
+ .blessing-parents{grid-template-columns:minmax(0,1fr) 34px minmax(0,1fr);column-gap:4px}
+ .family-label{font-size:9px;letter-spacing:.08em;margin-bottom:9px}
+ .family-names{font-size:15px;line-height:1.25}
+ .blessing-divider{height:82px}
+ .blessing-flower{width:27px}
+ .blessing-cross{width:14px;height:14px;margin-left:2px}
+}
+/* Final parents blessing alignment polish */
+.parents-blessing .blessing-parents{align-items:start}
+.parents-blessing .blessing-family{align-self:start}
+.parents-blessing .blessing-cross{display:inline-flex;vertical-align:-0.12em;width:12px;height:12px;margin-left:3px;align-items:center;justify-content:center;color:#6f8ca1;flex:0 0 auto}
+.parents-blessing .blessing-cross svg{width:100%;height:100%;display:block;fill:currentColor;stroke:none}
+@media(max-width:700px){
+ .parents-blessing .blessing-parents{align-items:start}
+ .parents-blessing .blessing-family{align-self:start}
+ .parents-blessing .blessing-divider{align-self:start}
+ .parents-blessing .blessing-cross{width:11px;height:11px;margin-left:3px}
+}
+@media(max-width:390px){
+ .parents-blessing .blessing-cross{width:10px;height:10px;margin-left:2px}
+}
 
 /* GALLERY */
 .gallery-section{padding:110px 0 130px;background:#17212b;overflow:hidden}
@@ -378,7 +397,7 @@ body{background:#eef4f8;color:#536979}
   text-align:center;
 }
 .parent + .parent{border-left:1px solid var(--line) !important}
-.cross-mark{display:inline-flex;vertical-align:-0.18em;width:22px;height:22px;margin-right:5px;align-items:center;justify-content:center;color:#7f9caf}
+.cross-mark{display:inline-flex;vertical-align:-0.18em;width:16px;height:16px;margin-left:3px; margin-right:0;align-items:center;justify-content:center;color:#7f9caf}
 .cross-mark svg{width:100%;height:100%;fill:currentColor;stroke:currentColor;stroke-width:.55;stroke-linejoin:round}
 @media(max-width:850px){
   .parents{
@@ -427,7 +446,7 @@ body{background:#eef4f8;color:#536979}
     max-width:320px;
   }
   .parent .parent-line{min-height:0}
-  .cross-mark{width:19px;height:19px;margin-right:3px}
+  .cross-mark{width:14px;height:14px;margin-left:2px;margin-right:0}
 }
 @media(max-width:390px){
   .parent{padding:25px 14px 28px}
@@ -873,7 +892,7 @@ section, .wrap, .hero, .hero-content, .gallery-section, .gallery-stage,
     <div class="blessing-family">
      <span class="family-label">Parents of the Bride</span>
      <div class="family-names">Aurora Mendoza</div>
-     <div class="family-names deceased">Buenvenido Mendoza <span class="blessing-cross" aria-label="In loving memory"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M14 4h4v9h8v4h-8v11h-4V17H6v-4h8V4Z"></path><path d="M16 2.5v2M16 27.5v2" opacity=".35"></path></svg></span></div>
+     <div class="family-names deceased">Buenvenido Mendoza <span class="blessing-cross" aria-label="In loving memory"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 3h4v7h7v4h-7v7h-4v-7H3v-4h7V3Z"/></svg></span></div>
     </div>
     <div class="blessing-divider" aria-hidden="true">
       <svg class="blessing-flower" viewBox="0 0 46 112" role="img" aria-label="floral divider">
@@ -951,10 +970,6 @@ section, .wrap, .hero, .hero-content, .gallery-section, .gallery-stage,
     <div class="ent-grand-opening" aria-hidden="true"><span class="grand-line"></span><span class="grand-mark">✦</span><span class="grand-line"></span></div>
     <div class="kicker" style="text-align:center">With love and gratitude</div><h2 class="ent-title">THE ENTOURAGE</h2><div class="rule">✦</div>
     <p class="ent-intro">We are blessed to be surrounded by the people who have shared our journey and who will stand beside us as we begin our forever.</p>
-    <div class="parents">
-     <div class="parent"><h3>Parents of the Bride</h3><div class="name"><span class="parent-line">Aurora Mendoza &amp;</span><span class="parent-line"><span class="cross-mark" aria-label="In loving memory"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M14 4h4v9h8v4h-8v11h-4V17H6v-4h8V4Z"></path><path d="M16 2.5v2M16 27.5v2" opacity=".35"></path></svg></span> Buenvenido Mendoza</span></div></div>
-     <div class="parent"><h3>Parents of the Groom</h3><div class="name"><span class="parent-line">Florencia Latina &amp;</span><span class="parent-line">Cesto Latina</span></div></div>
-    </div>
     <div class="sep"></div><div class="label">Principal Sponsors</div>
     <div class="sponsors">
      <div class="sponsor">Cynthia Latina &amp; Remegio Latina</div><div class="sponsor">Annaliza Navarro &amp; Allan Navarro</div>
