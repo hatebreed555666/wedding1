@@ -102,6 +102,12 @@ url("landingpage.jpg") center/cover no-repeat}
  .family-label{font-size:9px}.family-names{font-size:15.5px;line-height:1.28}.blessing-parents{grid-template-columns:minmax(0,1fr) 38px minmax(0,1fr);max-width:360px}.blessing-divider{width:38px}.blessing-flower{width:28px;height:74px}
 }
 
+
+.blessing-cross{display:inline-flex;vertical-align:-0.14em;width:17px;height:17px;margin-left:4px;align-items:center;justify-content:center;color:#6f8ca1}
+.blessing-cross svg{width:100%;height:100%;fill:currentColor;stroke:currentColor;stroke-width:.55;stroke-linejoin:round}
+@media(max-width:700px){.blessing-parents .blessing-family:last-child{transform:translateY(-9px)}}
+@media(max-width:390px){.blessing-parents .blessing-family:last-child{transform:translateY(-7px)}.blessing-cross{width:15px;height:15px;margin-left:3px}}
+
 /* GALLERY */
 .gallery-section{padding:110px 0 130px;background:#17212b;overflow:hidden}
 .gallery-head{text-align:center;margin-bottom:48px}
@@ -867,7 +873,7 @@ section, .wrap, .hero, .hero-content, .gallery-section, .gallery-stage,
     <div class="blessing-family">
      <span class="family-label">Parents of the Bride</span>
      <div class="family-names">Aurora Mendoza</div>
-     <div class="family-names deceased">✝ Buenvenido Mendoza</div>
+     <div class="family-names deceased">Buenvenido Mendoza <span class="blessing-cross" aria-label="In loving memory"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M14 4h4v9h8v4h-8v11h-4V17H6v-4h8V4Z"></path><path d="M16 2.5v2M16 27.5v2" opacity=".35"></path></svg></span></div>
     </div>
     <div class="blessing-divider" aria-hidden="true">
       <svg class="blessing-flower" viewBox="0 0 46 112" role="img" aria-label="floral divider">
