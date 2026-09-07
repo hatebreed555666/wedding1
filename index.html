@@ -317,24 +317,84 @@ body{background:#eef4f8;color:#536979}
 
 
 
-/* ===== ENTOURAGE PARENTS: MOTIF CROSS + TWO-COLUMN MOBILE LAYOUT ===== */
-.parents{gap:0}
-.parent + .parent{border-left:1px solid var(--line)}
+/* ===== ENTOURAGE PARENTS: OPTION 2 — RESPONSIVE FAMILY SEPARATION ===== */
+.parents{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+  align-items:stretch;
+  max-width:980px;
+  margin:34px auto 42px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.parent{
+  position:relative;
+  min-height:170px;
+  padding:32px 28px;
+  border:0 !important;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+.parent + .parent{border-left:1px solid var(--line) !important}
 .cross-mark{display:inline-flex;vertical-align:-0.18em;width:22px;height:22px;margin-right:5px;align-items:center;justify-content:center;color:#7f9caf}
 .cross-mark svg{width:100%;height:100%;fill:currentColor;stroke:currentColor;stroke-width:.55;stroke-linejoin:round}
 @media(max-width:850px){
-  .parents{grid-template-columns:1fr 1fr !important;gap:0 !important;margin-top:26px}
-  .parent{padding:24px 10px;min-height:150px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .parent h3{font-size:16px;letter-spacing:.07em;line-height:1.25;margin-bottom:10px}
-  .parent .name{font-size:19px;line-height:1.35}
+  .parents{
+    grid-template-columns:1fr !important;
+    width:100% !important;
+    margin:26px auto 34px;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .parent{
+    width:100%;
+    min-height:0;
+    padding:28px 18px 30px;
+    box-sizing:border-box;
+  }
+  .parent + .parent{
+    border-left:0 !important;
+    border-top:1px solid var(--line) !important;
+    position:relative;
+  }
+  .parent + .parent:before{
+    content:'✦';
+    position:absolute;
+    top:-11px;
+    left:50%;
+    transform:translateX(-50%);
+    width:22px;
+    height:22px;
+    display:grid;
+    place-items:center;
+    background:#ffffff;
+    color:#8ea8ba;
+    font-size:10px;
+    line-height:1;
+  }
+  .parent h3{
+    font-size:17px;
+    letter-spacing:.08em;
+    line-height:1.25;
+    margin:0 0 10px;
+  }
+  .parent .name{
+    font-size:20px;
+    line-height:1.4;
+    width:100%;
+    max-width:320px;
+  }
   .parent .parent-line{min-height:0}
   .cross-mark{width:19px;height:19px;margin-right:3px}
 }
 @media(max-width:390px){
-  .parent{padding-left:7px;padding-right:7px}
-  .parent h3{font-size:14px}
-  .parent .name{font-size:17px}
-  .cross-mark{width:17px;height:17px}
+  .parent{padding:25px 14px 28px}
+  .parent h3{font-size:15px;letter-spacing:.07em}
+  .parent .name{font-size:19px}
 }
 
 /* ===== ROMANTIC GALLERY ENTRANCE ===== */
