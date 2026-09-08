@@ -1106,6 +1106,25 @@ section, .wrap, .hero, .hero-content, .gallery-section, .gallery-stage,
   display:none !important;
 }
 </style>
+
+<style id="entourage-approved-larger-names">
+/* Approved master: enlarge the people names in THE ENTOURAGE while preserving layout. */
+.ent-core .role-name,
+.entourage-core .role-name{
+  font-size:clamp(22px,4.4vw,29px) !important;
+  line-height:1.22 !important;
+  color:#496f86 !important;
+  font-weight:600 !important;
+}
+@media(max-width:700px){
+  .ent-core .role-name,
+  .entourage-core .role-name{
+    font-size:clamp(18px,5.2vw,23px) !important;
+    line-height:1.24 !important;
+  }
+}
+</style>
+
 </head>
 <body>
 
