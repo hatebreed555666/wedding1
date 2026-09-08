@@ -864,6 +864,68 @@ section, .wrap, .hero, .hero-content, .gallery-section, .gallery-stage,
   .details .detail h3{font-size:24px;margin:10px 0}
   .details .detail p{font-size:19px;line-height:1.42}
 }
+
+/* ===== ENTOURAGE REFINEMENT: ICON SEPARATORS + MOBILE SPACE ===== */
+.ent-intro{
+  font-size:18px !important;
+  line-height:1.45 !important;
+  max-width:680px !important;
+  margin-bottom:20px !important;
+  color:#526d7f !important;
+}
+.ent-page{background:linear-gradient(180deg,#f8fbfd,#eef4f8) !important;box-shadow:0 18px 55px rgba(91,118,135,.10) !important;border-color:rgba(111,139,157,.20) !important}
+.ent-page:before{border-color:rgba(111,139,157,.10) !important}
+.ent-separator{
+  height:34px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:8px 0;
+  position:relative;
+}
+.ent-separator span{
+  width:28px;height:28px;display:grid;place-items:center;
+  color:#7f9caf;
+  font-size:13px;
+  background:#eef4f8;
+  border:1px solid rgba(127,156,175,.35);
+  border-radius:50%;
+  box-shadow:0 5px 16px rgba(82,109,127,.10);
+  animation:entSepFloat 3.2s ease-in-out infinite;
+}
+@keyframes entSepFloat{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-3px) scale(1.04)}}
+.label{
+  color:#526d7f !important;
+  font-size:clamp(22px,3vw,29px) !important;
+  font-weight:600;
+  white-space:nowrap;
+  margin-bottom:4px !important;
+}
+.sponsors{gap:3px 50px !important;margin-top:12px !important}
+.sponsor{font-size:18px !important;line-height:1.45 !important;color:#526d7f !important}
+/* Remove hard divider lines within the entourage; spacing + ornaments define groups. */
+.toprow,.party{border-top:0 !important;border-bottom:0 !important}
+.honor+.honor,.group+.group{border-left:0 !important}
+.roles .role,.roles.four .role{border-left:0 !important}
+.role{min-height:120px !important}
+.role .name,.list,.honor p{color:#526d7f !important}
+@media(max-width:850px){
+  .ent-intro{font-size:16px !important;line-height:1.45 !important;max-width:560px !important;margin-bottom:14px !important}
+  .ent-separator{height:30px;margin:4px 0}
+  .ent-separator span{width:25px;height:25px;font-size:11px}
+  .label{font-size:22px !important;letter-spacing:.09em !important}
+  .sponsors{gap:4px 18px !important}
+  .sponsor{font-size:17px !important;line-height:1.4 !important}
+  .toprow,.party{grid-template-columns:1fr !important}
+  .honor,.group{padding:16px 12px !important}
+  .honor h2,.group h3{font-size:22px !important;margin-bottom:5px !important}
+  .honor p{font-size:19px !important}
+}
+@media(max-width:390px){
+  .ent-intro{font-size:15px !important}
+  .label{font-size:20px !important}
+  .sponsor{font-size:16px !important}
+}
 </style>
 </head>
 <body>
@@ -984,7 +1046,7 @@ section, .wrap, .hero, .hero-content, .gallery-section, .gallery-stage,
     <div class="ent-grand-opening" aria-hidden="true"><span class="grand-line"></span><span class="grand-mark">✦</span><span class="grand-line"></span></div>
     <div class="kicker" style="text-align:center">With love and gratitude</div><h2 class="ent-title">THE ENTOURAGE</h2><div class="rule">✦</div>
     <p class="ent-intro">We are blessed to be surrounded by the people who have shared our journey and who will stand beside us as we begin our forever.</p>
-    <div class="sep"></div><div class="label">Principal Sponsors</div>
+    <div class="ent-separator" aria-hidden="true"><span>✦</span></div><div class="label">Principal Sponsors</div>
     <div class="sponsors">
      <div class="sponsor">Cynthia Latina &amp; Remegio Latina</div><div class="sponsor">Annaliza Navarro &amp; Allan Navarro</div>
      <div class="sponsor">Rosalinda Vasquez &amp; Roger Aguila</div><div class="sponsor">Divine Chavez &amp; Anthony Chavez</div>
@@ -998,18 +1060,18 @@ section, .wrap, .hero, .hero-content, .gallery-section, .gallery-stage,
   <div class="ent-page">
    <div class="ent-content">
     <div class="toprow"><div class="honor"><h2>Maid of Honor</h2><p>Vivien Ann Alejandro</p></div><div class="honor"><h2>Best Man</h2><p>Sherwin Glericson Norsio</p></div></div>
-    <div class="sep"></div>
+    <div class="ent-separator" aria-hidden="true"><span>✦</span></div>
     <div class="roles">
      <div class="role"><div class="icon">♧</div><h3>Veil</h3><div class="name">Aileen Moren &amp; Reniel Del Mundo</div></div>
      <div class="role"><div class="icon">∞</div><h3>Cord</h3><div class="name">Hairo Amito &amp; Raymon Siman</div></div>
      <div class="role"><div class="icon">🕯</div><h3>Candle</h3><div class="name">Bianca Mendoza &amp; Joshua Torres</div></div>
     </div>
-    <div class="sep"></div>
+    <div class="ent-separator" aria-hidden="true"><span>✦</span></div>
     <div class="party">
      <div class="group"><h3>Bridesmaids</h3><div class="list"><span>Judy Mae Dela Roca</span><span>Margarette Arguelles</span><span>Veronica Cadeliña</span><span>Nicole Abu</span><span>Irish Latina</span><span>Jonalyn Gonzales</span></div></div>
      <div class="group"><h3>Groomsmen</h3><div class="list"><span>Deary Jun Delos Santos</span><span>Eury Austria</span><span>Joseph Salita</span><span>Cesar Leviste</span><span>Windell Dimayuga</span><span>Jihu Duero</span></div></div>
     </div>
-    <div class="sep"></div>
+    <div class="ent-separator" aria-hidden="true"><span>✦</span></div>
     <div class="roles four">
      <div class="role">
        <div class="icon icon-svg" aria-label="Bible">
