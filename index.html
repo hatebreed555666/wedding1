@@ -1125,6 +1125,101 @@ section, .wrap, .hero, .hero-content, .gallery-section, .gallery-stage,
 }
 </style>
 
+
+<style id="entourage-party-list">
+.entourage-party{
+  width:min(900px,100%);
+  margin:34px auto 0;
+}
+.entourage-divider-icon{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin:24px auto 6px;
+  color:#496f86;
+}
+.entourage-divider-icon svg{
+  width:40px;
+  height:40px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.party-list{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:42px;
+  text-align:center;
+}
+.party-heading{
+  font-size:clamp(16px,2vw,21px);
+  font-weight:600;
+  letter-spacing:.14em;
+  color:#496f86;
+  margin-bottom:13px;
+}
+.party-names{
+  display:grid;
+  gap:8px;
+  font-size:clamp(15px,1.6vw,18px);
+  line-height:1.35;
+  color:#496f86;
+}
+@media(max-width:700px){
+  .entourage-party{margin-top:26px}
+  .entourage-divider-icon{margin:20px auto 4px}
+  .entourage-divider-icon svg{width:34px;height:34px}
+  .party-list{gap:18px}
+  .party-heading{
+    font-size:15px;
+    letter-spacing:.10em;
+    margin-bottom:10px;
+  }
+  .party-names{
+    font-size:13.5px;
+    line-height:1.38;
+    gap:7px;
+  }
+}
+@media(max-width:360px){
+  .party-list{gap:10px}
+  .party-names{font-size:12.5px}
+}
+</style>
+
+
+<style id="entourage-unified-name-size">
+.ent-core .role-name,
+.entourage-core .role-name,
+.entourage-party .party-names{
+  font-size:clamp(16px,3.6vw,20px) !important;
+  line-height:1.4 !important;
+  color:#496f86 !important;
+  font-weight:500 !important;
+}
+@media(max-width:700px){
+  .ent-core .role-name,
+  .entourage-core .role-name,
+  .entourage-party .party-names{
+    font-size:15px !important;
+    line-height:1.4 !important;
+  }
+}
+</style>
+
+
+<style id="entourage-unified-font-family">
+.ent-core .role-name,
+.entourage-core .role-name,
+.entourage-party .party-names{
+  font-family:var(--serif, Georgia, "Times New Roman", serif) !important;
+  font-style:normal !important;
+  font-weight:500 !important;
+}
+</style>
+
 </head>
 <body>
 
@@ -1261,7 +1356,45 @@ section, .wrap, .hero, .hero-content, .gallery-section, .gallery-stage,
       <div class="ent-icon-separator" aria-hidden="true"><span>✦</span></div>
 
       <div class="ent-candle">
-        <div class="role"><div class="icon icon-svg" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M32 11v5"/><path d="M29 17c-2-4 1-7 3-10 2 3 5 6 3 10"/><path d="M24 22h16v27H24z"/><path d="M21 49h22"/><path d="M19 53h26"/><path d="M27 28h10"/><path d="M27 35h10"/><path d="M27 42h10"/></svg></div><h3>Candle</h3><div class="name">Bianca Mendoza &amp; Joshua Torres</div></div>
+        <div class="role"><div class="icon icon-svg" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M32 11v5"/><path d="M29 17c-2-4 1-7 3-10 2 3 5 6 3 10"/><path d="M24 22h16v27H24z"/><path d="M21 49h22"/><path d="M19 53h26"/><path d="M27 28h10"/><path d="M27 35h10"/><path d="M27 42h10"/></svg></div><h3>Candle</h3><div class="name">Bianca Mendoza &amp; Joshua Torres
+    </div>
+</div></div>
+
+    <div class="entourage-divider-icon" aria-hidden="true">
+      <svg viewBox="0 0 64 64" role="img">
+        <path d="M32 9c-5 4-5 10 0 14 5-4 5-10 0-14Z"></path>
+        <path d="M32 41c-5-4-5-10 0-14 5 4 5 10 0 14Z"></path>
+        <path d="M32 25v14"></path>
+      </svg>
+    </div>
+
+    <div class="entourage-party">
+      <div class="party-list">
+        <div class="party-group">
+          <div class="party-heading">BRIDESMAIDS</div>
+          <div class="party-names">
+            <div>Judy Mae Dela Roca</div>
+            <div>Margarette Arguelles</div>
+            <div>Veronica Cadeliña</div>
+            <div>Nicole Abu</div>
+            <div>Irish Latina</div>
+            <div>Jonalyn Gonzales</div>
+          </div>
+        </div>
+
+        <div class="party-group">
+          <div class="party-heading">GROOMSMEN</div>
+          <div class="party-names">
+            <div>Deary Jun Delos Santos</div>
+            <div>Eury Austria</div>
+            <div>Joseph Salita</div>
+            <div>Cesar Leviste</div>
+            <div>Windell Dimayuga</div>
+            <div>Jihu Duero</div>
+          </div>
+        </div>
+      </div>
+
       </div>
     </div>
    </div>
