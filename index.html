@@ -210,6 +210,72 @@ url("landingpage.jpg") center/cover no-repeat}
 .final-card h3{font-size:34px;letter-spacing:.08em;margin:15px 0 10px;color:#f5f8fa}
 .final-card p{font-family:"Cormorant Garamond",serif;font-size:22px;line-height:1.55;color:#d7e0e7;margin:0}
 
+
+/* ===== FINAL DETAILS PAGE ===== */
+.final-details-grid{grid-template-columns:1fr 1fr;border:0;gap:28px;margin-top:50px}
+.final-details-grid .final-card{border:0;min-height:360px;padding:42px 34px;background:rgba(255,255,255,.62);box-shadow:0 18px 55px rgba(91,118,135,.10)}
+.final-details-grid .final-card:last-child{border-right:0}
+.final-svg-icon{width:54px;height:54px;margin:0 auto 8px;color:#7f9caf;display:flex;align-items:center;justify-content:center}
+.final-svg-icon svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.final-details-grid .final-card h3{font-family:"Cormorant Garamond",serif;font-size:31px;letter-spacing:.06em;margin:14px 0 14px;color:#526d7f}
+.final-details-grid .final-card p{font-size:21px;line-height:1.5;color:#657b89}
+.final-details-grid .final-card p strong{font-family:"Montserrat",sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#7f9caf}
+.motif-wrap{margin-top:22px}
+.motif-label{font-family:"Montserrat",sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#7f9caf}
+.motif-swatches{display:flex;justify-content:center;gap:10px;margin-top:10px}
+.swatch{width:28px;height:28px;border-radius:50%;border:1px solid rgba(73,111,134,.28);box-shadow:0 3px 10px rgba(91,118,135,.12)}
+.swatch-blue{background:#a9c0cf}
+.swatch-white{background:#fff}
+@media(max-width:700px){
+ .final-details-grid{grid-template-columns:1fr;gap:18px;margin-top:34px}
+ .final-details-grid .final-card{min-height:0;padding:36px 24px}
+ .final-details-grid .final-card h3{font-size:28px}
+ .final-details-grid .final-card p{font-size:20px}
+}
+
+
+/* ===== FANCY MAILBOX TEASER ===== */
+.final-mailbox-card{position:relative;overflow:hidden}
+.final-mailbox-card:before{content:"";position:absolute;inset:16px;border:1px solid rgba(127,156,175,.16);border-radius:18px;pointer-events:none}
+.mailbox-lockup{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center}
+.mailbox-envelope{position:relative;width:92px;height:72px;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;color:#7f9caf}
+.mailbox-envelope .envelope-body{position:absolute;inset:11px 8px 6px;border:1.7px solid currentColor;border-radius:8px;background:rgba(255,255,255,.38);box-shadow:0 12px 28px rgba(91,118,135,.08)}
+.mailbox-envelope .envelope-flap{position:absolute;left:16px;top:17px;width:60px;height:43px;border-left:1.7px solid currentColor;border-bottom:1.7px solid currentColor;transform:rotate(-45deg) translate(-4px,-4px);border-radius:0 0 0 3px;opacity:.9}
+.mailbox-envelope .spark{position:absolute;width:4px;height:4px;border-radius:50%;background:currentColor;opacity:.55}
+.mailbox-envelope .spark.s1{top:4px;right:7px}.mailbox-envelope .spark.s2{top:24px;left:0;width:3px;height:3px}.mailbox-envelope .spark.s3{bottom:7px;right:2px;width:3px;height:3px}
+.mailbox-teaser{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:19px;line-height:1.45;color:#6d8391;margin:1px auto 14px;max-width:290px}
+.mailbox-status{font-family:"Montserrat",sans-serif;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#7f9caf;margin:0 0 7px}
+.mailbox-countdown{display:grid;grid-template-columns:repeat(4,minmax(48px,1fr));gap:7px;width:min(300px,100%);margin:0 auto 18px}
+.mailbox-time{padding:8px 4px 7px;border:1px solid rgba(127,156,175,.20);border-radius:10px;background:rgba(255,255,255,.5);box-shadow:0 8px 20px rgba(91,118,135,.05)}
+.mailbox-time strong{display:block;font-family:"Cormorant Garamond",serif;font-size:25px;line-height:1;color:#526d7f;font-weight:600}
+.mailbox-time span{display:block;margin-top:3px;font-family:"Montserrat",sans-serif;font-size:7px;letter-spacing:.14em;text-transform:uppercase;color:#8aa0ad}
+.mailbox-note{font-family:"Cormorant Garamond",serif;font-size:17px;color:#7a8e9a;line-height:1.4;margin:0 auto 15px;max-width:300px}
+.mailbox-open-wrap{position:relative}
+.mailbox-open-btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:190px;padding:12px 22px;border:1px solid rgba(73,111,134,.28);border-radius:999px;background:rgba(255,255,255,.75);color:#526d7f;text-decoration:none;font-family:"Montserrat",sans-serif;font-size:10px;letter-spacing:.16em;text-transform:uppercase;transition:transform .3s ease,box-shadow .3s ease,background .3s ease}
+.mailbox-open-btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(82,109,127,.13);background:#fff}
+.mailbox-open-btn.is-locked{opacity:.6;pointer-events:none}
+.mailbox-open-btn.is-ready{animation:mailboxPulse 2.3s ease-in-out infinite;box-shadow:0 0 0 0 rgba(127,156,175,.18)}
+.mailbox-open-btn.is-ready:after{content:"";position:absolute;inset:-7px;border:1px solid rgba(127,156,175,.15);border-radius:999px;animation:mailboxRing 2.3s ease-out infinite}
+.mailbox-unlock{display:none;margin:0 0 14px;font-family:"Cormorant Garamond",serif;font-size:18px;font-style:italic;color:#526d7f}
+.mailbox-unlock.show{display:block;animation:mailboxFadeUp .8s ease both}
+.mailbox-mini-note{font-family:"Montserrat",sans-serif;font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:#91a5b1;margin-top:11px}
+.mailbox-confetti{position:absolute;inset:8% 8% 18%;pointer-events:none;overflow:visible}
+.mailbox-confetti span{position:absolute;left:50%;top:42%;width:4px;height:12px;border-radius:2px;background:#9bb1bf;opacity:0;transform:translate(-50%,-50%) rotate(0deg)}
+.mailbox-confetti span:nth-child(1){--x:-82px;--y:-44px;--r:-18deg}.mailbox-confetti span:nth-child(2){--x:-57px;--y:-84px;--r:24deg}.mailbox-confetti span:nth-child(3){--x:2px;--y:-96px;--r:-12deg}.mailbox-confetti span:nth-child(4){--x:54px;--y:-72px;--r:20deg}.mailbox-confetti span:nth-child(5){--x:85px;--y:-32px;--r:-26deg}.mailbox-confetti span:nth-child(6){--x:70px;--y:6px;--r:16deg}.mailbox-confetti span:nth-child(7){--x:-68px;--y:11px;--r:28deg}.mailbox-confetti span:nth-child(8){--x:-24px;--y:-72px;--r:-32deg}
+.mailbox-confetti.play span{animation:mailboxBurst .95s cubic-bezier(.2,.75,.2,1) forwards}
+.mailbox-confetti.play span:nth-child(2),.mailbox-confetti.play span:nth-child(6){animation-delay:.05s}.mailbox-confetti.play span:nth-child(3),.mailbox-confetti.play span:nth-child(7){animation-delay:.09s}.mailbox-confetti.play span:nth-child(4),.mailbox-confetti.play span:nth-child(8){animation-delay:.13s}
+@keyframes mailboxPulse{0%,100%{box-shadow:0 0 0 0 rgba(127,156,175,.12)}50%{box-shadow:0 0 0 9px rgba(127,156,175,.06)}}
+@keyframes mailboxRing{0%{transform:scale(.94);opacity:.8}80%,100%{transform:scale(1.1);opacity:0}}
+@keyframes mailboxBurst{0%{opacity:0;transform:translate(-50%,-50%) rotate(0)}15%{opacity:.85}100%{opacity:0;transform:translate(calc(-50% + var(--x)),calc(-50% + var(--y))) rotate(var(--r))}}
+@keyframes mailboxFadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:700px){
+ .mailbox-countdown{width:min(286px,100%);gap:6px}
+ .mailbox-time strong{font-size:23px}
+ .mailbox-teaser{font-size:18px}
+ .mailbox-note{font-size:16px}
+ .mailbox-envelope{transform:scale(.94)}
+}
+
 /* ===== SUPPLIED PHOTO INTEGRATION ===== */
 .gallery-thumbs{flex-wrap:wrap;max-width:1120px;margin-left:auto;margin-right:auto}
 .gallery-thumbs .thumb{border-radius:2px}
@@ -1325,6 +1391,58 @@ section, .wrap, .hero, .hero-content, .gallery-section, .gallery-stage,
 }
 </style>
 
+<style>
+
+/* ===== PRINCIPAL SPONSORS — DISTINCT PAGE / SIMPLE LIST ===== */
+.principal-sponsors{
+  position:relative;
+  padding:0 0 110px;
+  background:linear-gradient(180deg,#dfeaf1 0%,#eef4f8 12%,#f8fbfd 100%);
+  overflow:hidden;
+}
+.ps-transition{
+  height:150px;
+  display:flex;align-items:center;justify-content:center;gap:16px;opacity:.9;
+}
+.ps-transition-line{width:min(26vw,260px);height:1px;background:linear-gradient(90deg,transparent,rgba(111,139,157,.5))}
+.ps-transition-line:last-child{background:linear-gradient(90deg,rgba(111,139,157,.5),transparent)}
+.ps-transition-mark{width:34px;height:34px;display:grid;place-items:center;color:#7f9caf;font-family:Georgia,serif;font-size:12px;position:relative}
+.ps-transition-mark::before{content:"";position:absolute;inset:6px;border:1px solid rgba(111,139,157,.24);transform:rotate(45deg)}
+.principal-sponsors-page{max-width:920px;margin:0 auto;padding:32px 30px 54px;background:transparent;border:0;box-shadow:none}
+.principal-sponsors-content{text-align:center}
+.principal-sponsors-title{margin:8px 0 10px;font-size:clamp(42px,5.2vw,60px);line-height:1.05;letter-spacing:.075em;color:#526d7f}
+.principal-sponsors-intro{max-width:720px;margin:0 auto 38px;font-family:"Cormorant Garamond",serif;font-size:21px;line-height:1.5;color:#657b89}
+.principal-sponsors-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:4px}
+.sponsor-pair,.sponsor-single{min-height:0;padding:5px 8px;font-family:"Cormorant Garamond",serif;font-size:20px;line-height:1.35;font-weight:600;color:#496f86;background:none;border:0}
+.sponsor-pair{display:grid;grid-template-columns:minmax(0,1fr) 28px minmax(0,1fr);align-items:center;column-gap:10px}
+.sponsor-pair span:first-child{text-align:right}
+.sponsor-pair span:first-child::after{content:""}
+.sponsor-pair span:last-child{text-align:left}
+.sponsor-pair::before{content:"&";grid-column:2;grid-row:1;text-align:center;color:#8aa2b2;font-weight:500}
+.sponsor-single{display:block;text-align:center;margin:0 auto}
+.ps-closing-mark{margin:32px auto 0;display:flex;align-items:center;justify-content:center;gap:12px;color:#8ea8ba}
+.ps-closing-mark span:not(:nth-child(2)){width:70px;height:1px;background:linear-gradient(90deg,transparent,rgba(142,168,186,.48))}
+.ps-closing-mark span:last-child{background:linear-gradient(90deg,rgba(142,168,186,.48),transparent)}
+.ps-closing-mark span:nth-child(2){font-family:Georgia,serif;font-size:12px}
+.principal-sponsors .principal-sponsors-page,.principal-sponsors .ps-transition{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform 1s cubic-bezier(.2,.7,.2,1)}
+.principal-sponsors.is-visible .principal-sponsors-page,.principal-sponsors.is-visible .ps-transition{opacity:1;transform:translateY(0)}
+@media(max-width:700px){
+  .principal-sponsors{padding-bottom:78px}
+  .ps-transition{height:108px;gap:10px}
+  .ps-transition-line{width:24vw}
+  .ps-transition-mark{width:26px;height:26px;font-size:9px}
+  .principal-sponsors-page{padding:24px 18px 44px}
+  .principal-sponsors-title{font-size:34px;letter-spacing:.055em}
+  .principal-sponsors-intro{font-size:18px;line-height:1.45;margin-bottom:28px}
+  .principal-sponsors-list{gap:3px}
+  .sponsor-pair,.sponsor-single{font-size:18px;padding:4px 6px;line-height:1.32}
+  .sponsor-pair{grid-template-columns:minmax(0,1fr) 22px minmax(0,1fr);column-gap:6px}
+}
+@media(max-width:390px){
+  .principal-sponsors-title{font-size:30px}
+  .sponsor-pair,.sponsor-single{font-size:17px}
+}
+</style>
 </head>
 <body>
 
@@ -1548,7 +1666,7 @@ section, .wrap, .hero, .hero-content, .gallery-section, .gallery-stage,
                 <path d="M22 26c0 5 4 9 10 9s10-4 10-9"></path>
               </svg>
             </div>
-            <div class="final-role-label">Arras</div>
+            <div class="final-role-label">Arass</div>
             <div class="final-role-name">Aslan Atenta</div>
           </div>
 
@@ -1572,13 +1690,90 @@ section, .wrap, .hero, .hero-content, .gallery-section, .gallery-stage,
  </div>
 </section>
 
+
+<!-- PRINCIPAL SPONSORS -->
+<section class="principal-sponsors" id="principal-sponsors">
+  <div class="ps-transition" aria-hidden="true">
+    <span class="ps-transition-line"></span>
+    <span class="ps-transition-mark">✦</span>
+    <span class="ps-transition-line"></span>
+  </div>
+  <div class="wrap">
+    <div class="principal-sponsors-page">
+      <div class="principal-sponsors-content">
+        <div class="kicker">With grateful hearts</div>
+        <h2 class="principal-sponsors-title">PRINCIPAL SPONSORS</h2>
+        <div class="rule">✦</div>
+        <p class="principal-sponsors-intro">With love and gratitude, we honor the people who will stand as witnesses, mentors, and guides as we begin this new chapter together.</p>
+
+        <div class="principal-sponsors-list">
+          <div class="sponsor-single"><span>Conie Abu</span></div>
+          <div class="sponsor-pair"><span>Cynthia Latina</span><span>Remegio Latina</span></div>
+          <div class="sponsor-pair"><span>Rosalinda Vasquez</span><span>Roger Aguila</span></div>
+          <div class="sponsor-pair"><span>Yolanda Cadeliña</span><span>Esteban Cadeliña</span></div>
+          <div class="sponsor-pair"><span>Jossie Alvez</span><span>Ronald Alvez</span></div>
+          <div class="sponsor-pair"><span>Annaliza Navarro</span><span>Allan Navarro</span></div>
+          <div class="sponsor-pair"><span>Divine Chavez</span><span>Anthony Chavez</span></div>
+          <div class="sponsor-pair"><span>Vilma Grimaldo</span><span>Jr Grimaldo</span></div>
+          <div class="sponsor-pair"><span>Julita Bahala</span><span>Percival Bahala</span></div>
+          <div class="sponsor-pair"><span>Joel Mabilog</span><span>Jennifer Mabilog</span></div>
+        </div>
+
+        <div class="ps-closing-mark" aria-hidden="true">
+          <span></span><span>✦</span><span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="final">
  <div class="wrap">
-  <div class="section-head"><div class="kicker">The final details</div><h2>THE CELEBRATION</h2><div class="rule">✦</div></div>
-  <div class="final-grid">
-   <div class="final-card"><div class="big">✦</div><h3>Celebration</h3><p>Join us as we celebrate our love and begin our forever surrounded by the people closest to our hearts.</p></div>
-   <div class="final-card"><div class="big">♢</div><h3>Attire</h3><p>Semi-formal or casual attire in light colors.<br><br>Come comfortable, elegant, and ready to celebrate.</p></div>
-   <div class="final-card"><div class="big">✉</div><h3>Mailbox</h3><p>Leave us a heartfelt message and a memory for our wedding day.</p><a href="#" class="btn">Open the Mailbox</a></div>
+  <div class="section-head"><div class="kicker">A few things to remember</div><h2>FINAL DETAILS</h2><div class="rule">✦</div></div>
+  <div class="final-grid final-details-grid">
+   <div class="final-card final-info-card">
+    <div class="final-svg-icon" aria-hidden="true">
+      <svg viewBox="0 0 64 64">
+        <path d="M32 9v10c0 5-4 8-9 10l-6 3c-4 2-6 6-6 11v7h42v-7c0-5-2-9-6-11l-6-3c-5-2-9-5-9-10V9"/>
+        <path d="M22 19c3 4 17 4 20 0"/>
+      </svg>
+    </div>
+    <h3>Attire &amp; Motif</h3>
+    <p><strong>Dress Code</strong><br>Come as you are and wear what makes you most comfortable — just keep it light, soft, and lovely.</p>
+    <div class="motif-wrap">
+      <div class="motif-label">Dusty Blue &amp; White</div>
+      <div class="motif-swatches" aria-label="Dusty blue and white motif">
+        <span class="swatch swatch-blue"></span>
+        <span class="swatch swatch-white"></span>
+      </div>
+    </div>
+   </div>
+   <div class="final-card final-mailbox-card" id="wedding-mailbox">
+    <div class="mailbox-lockup">
+      <div class="mailbox-envelope" aria-hidden="true">
+        <span class="envelope-body"></span>
+        <span class="envelope-flap"></span>
+        <i class="spark s1"></i><i class="spark s2"></i><i class="spark s3"></i>
+      </div>
+      <div class="mailbox-status" id="mailbox-status">Our little mailbox</div>
+      <h3>Mailbox</h3>
+      <p class="mailbox-teaser">Leave us a little note, a sweet message, or a memory we can keep forever.</p>
+      <div class="mailbox-countdown" aria-label="Countdown until the mailbox opens">
+        <div class="mailbox-time"><strong id="mb-days">--</strong><span>Days</span></div>
+        <div class="mailbox-time"><strong id="mb-hours">--</strong><span>Hours</span></div>
+        <div class="mailbox-time"><strong id="mb-minutes">--</strong><span>Minutes</span></div>
+        <div class="mailbox-time"><strong id="mb-seconds">--</strong><span>Seconds</span></div>
+      </div>
+      <div class="mailbox-unlock" id="mailbox-unlock">The mailbox is now open. 💌</div>
+      <div class="mailbox-open-wrap">
+        <div class="mailbox-confetti" id="mailbox-confetti" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <a href="#" class="mailbox-open-btn is-locked" id="mailbox-open-btn" aria-disabled="true">Mailbox opens on our wedding day</a>
+      </div>
+      <div class="mailbox-mini-note">October 10, 2026</div>
+    </div>
+   </div>
   </div>
   <div class="closing-photo" aria-label="Jon Carlo and Vennie Ann">
     <div class="closing-photo-overlay">
@@ -1676,6 +1871,70 @@ if (galleryStage && slides.length > 1) {
     resetTimer();
   }, {passive:true});
 }
+
+/* ===== WEDDING DAY MAILBOX TEASER ===== */
+const mailboxTarget = new Date('2026-10-10T00:00:00');
+const mbDays = document.getElementById('mb-days');
+const mbHours = document.getElementById('mb-hours');
+const mbMinutes = document.getElementById('mb-minutes');
+const mbSeconds = document.getElementById('mb-seconds');
+const mailboxBtn = document.getElementById('mailbox-open-btn');
+const mailboxStatus = document.getElementById('mailbox-status');
+const mailboxUnlock = document.getElementById('mailbox-unlock');
+const mailboxConfetti = document.getElementById('mailbox-confetti');
+
+function launchMailboxConfetti(){
+  if(!mailboxConfetti) return;
+  mailboxConfetti.classList.remove('play');
+  void mailboxConfetti.offsetWidth;
+  mailboxConfetti.classList.add('play');
+}
+
+function unlockMailbox(){
+  if(!mailboxBtn) return;
+  mailboxBtn.classList.remove('is-locked');
+  mailboxBtn.classList.add('is-ready');
+  mailboxBtn.setAttribute('aria-disabled','false');
+  mailboxBtn.textContent='Open the Mailbox';
+  if(mailboxStatus) mailboxStatus.textContent='Our mailbox is ready';
+  if(mailboxUnlock) mailboxUnlock.classList.add('show');
+  launchMailboxConfetti();
+}
+
+function updateMailboxCountdown(){
+  if(!mbDays) return;
+  const now = new Date();
+  let diff = mailboxTarget - now;
+  if(diff <= 0){
+    mbDays.textContent='00'; mbHours.textContent='00'; mbMinutes.textContent='00'; mbSeconds.textContent='00';
+    unlockMailbox();
+    return;
+  }
+  const totalSeconds = Math.floor(diff/1000);
+  const days = Math.floor(totalSeconds/86400);
+  const hours = Math.floor((totalSeconds%86400)/3600);
+  const mins = Math.floor((totalSeconds%3600)/60);
+  const secs = totalSeconds%60;
+  mbDays.textContent=String(days).padStart(2,'0');
+  mbHours.textContent=String(hours).padStart(2,'0');
+  mbMinutes.textContent=String(mins).padStart(2,'0');
+  mbSeconds.textContent=String(secs).padStart(2,'0');
+}
+
+updateMailboxCountdown();
+setInterval(updateMailboxCountdown,1000);
+
+if(mailboxBtn){
+  mailboxBtn.addEventListener('click',(e)=>{
+    if(mailboxBtn.classList.contains('is-locked')){
+      e.preventDefault();
+      mailboxBtn.animate([
+        {transform:'translateX(0)'},{transform:'translateX(-3px)'},{transform:'translateX(3px)'},{transform:'translateX(0)'}
+      ],{duration:280});
+    }
+  });
+}
+
 
 </script>
 </body>
