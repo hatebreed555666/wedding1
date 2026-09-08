@@ -1249,6 +1249,82 @@ section, .wrap, .hero, .hero-content, .gallery-section, .gallery-stage,
 }
 </style>
 
+
+<style id="entourage-role-labels-bold">
+.ent-core .honor h2,
+.ent-core .role h3{
+  font-weight:700 !important;
+  color:#496f86 !important;
+}
+</style>
+
+
+<style id="entourage-party-heading-standard-font">
+.entourage-party .party-heading{
+  font-family:"Cormorant Garamond",serif !important;
+  font-weight:700 !important;
+  color:#496f86 !important;
+  letter-spacing:.10em !important;
+}
+</style>
+
+
+<style id="entourage-final-roles">
+.ent-role-separator{
+  display:flex;justify-content:center;align-items:center;
+  margin:28px auto 12px;color:#496f86;
+}
+.ent-role-separator svg{
+  width:54px;height:24px;fill:none;stroke:currentColor;
+  stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;
+}
+.entourage-final-roles{
+  width:min(760px,100%);margin:0 auto;text-align:center;
+}
+.flower-role{width:min(220px,100%);margin:0 auto 18px}
+.final-role-row{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+}
+.final-role-icon{
+  width:38px;height:38px;margin:0 auto 7px;color:#496f86;
+}
+.final-role-icon svg{
+  width:100%;height:100%;fill:none;stroke:currentColor;
+  stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;
+}
+.final-role-label{
+  font-family:"Cormorant Garamond",serif;font-size:14px;
+  font-weight:700;letter-spacing:.10em;text-transform:uppercase;
+  color:#496f86;margin-bottom:5px;
+}
+.final-role-name{
+  font-family:"Cormorant Garamond",serif;font-size:16px;
+  line-height:1.35;font-weight:600;color:#496f86;
+}
+@media(max-width:700px){
+  .ent-role-separator{margin:22px auto 10px}
+  .ent-role-separator svg{width:48px;height:22px}
+  .flower-role{margin-bottom:14px}
+  .final-role-row{gap:7px}
+  .final-role-icon{width:34px;height:34px}
+  .final-role-label{font-size:12.5px;letter-spacing:.08em}
+  .final-role-name{font-size:14.5px;line-height:1.32}
+}
+@media(max-width:360px){
+  .final-role-row{gap:4px}
+  .final-role-icon{width:31px;height:31px}
+  .final-role-label{font-size:11.5px}
+  .final-role-name{font-size:13.2px}
+}
+</style>
+
+<style id="ring-icon-refined">
+.entourage-final-roles .final-role:nth-child(3) .final-role-icon svg{
+  stroke-width:1.55;
+}
+</style>
+
 </head>
 <body>
 
@@ -1414,7 +1490,7 @@ section, .wrap, .hero, .hero-content, .gallery-section, .gallery-stage,
         <div class="party-group">
           <div class="party-heading">GROOMSMEN</div>
           <div class="party-names">
-            <div>Deary Delos Santos</div>
+            <div>Deary Jun Delos Santos</div>
             <div>Eury Austria</div>
             <div>Joseph Salita</div>
             <div>Cesar Leviste</div>
@@ -1424,7 +1500,72 @@ section, .wrap, .hero, .hero-content, .gallery-section, .gallery-stage,
         </div>
       </div>
 
+      
+
+      <div class="ent-role-separator" aria-hidden="true">
+        <svg viewBox="0 0 80 28">
+          <path d="M40 4c-5 3-7 8-5 12 2 4 8 6 5 9"></path>
+          <path d="M40 4c5 3 7 8 5 12-2 4-8 6-5 9"></path>
+          <path d="M29 14c3-5 7-6 11 0-4 6-8 5-11 0ZM51 14c-3-5-7-6-11 0 4 6 8 5 11 0Z"></path>
+        </svg>
       </div>
+
+      <div class="entourage-final-roles">
+        <div class="final-role flower-role">
+          <div class="final-role-icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64">
+              <path d="M32 54V25"></path>
+              <path d="M32 27c-7-5-8-12-3-17 6 2 8 9 3 17Z"></path>
+              <path d="M32 30c7-5 8-12 3-17-6 2-8 9-3 17Z"></path>
+              <path d="M32 39c-6-4-11-2-14 3 5 3 10 2 14-3Z"></path>
+              <path d="M32 39c6-4 11-2 14 3-5 3-10 2-14-3Z"></path>
+              <circle cx="32" cy="22" r="3"></circle>
+            </svg>
+          </div>
+          <div class="final-role-label">Flower Girl</div>
+          <div class="final-role-name">Arabella Resma</div>
+        </div>
+
+        <div class="final-role-row">
+          <div class="final-role">
+            <div class="final-role-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64">
+                <path d="M16 13h32v39H16z"></path>
+                <path d="M32 13v39"></path>
+                <path d="M22 21h7M35 21h7M22 29h7M35 29h7"></path>
+                <path d="M22 38h20M22 44h20"></path>
+              </svg>
+            </div>
+            <div class="final-role-label">Bible</div>
+            <div class="final-role-name">Caile Del Mundo</div>
+          </div>
+
+          <div class="final-role">
+            <div class="final-role-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64">
+                <path d="M15 24c0 12 7 21 17 21s17-9 17-21"></path>
+                <path d="M20 21c1-5 5-8 12-8s11 3 12 8"></path>
+                <path d="M22 26c0 5 4 9 10 9s10-4 10-9"></path>
+              </svg>
+            </div>
+            <div class="final-role-label">Arras</div>
+            <div class="final-role-name">Aslan Atenta</div>
+          </div>
+
+          <div class="final-role">
+            <div class="final-role-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64">
+                <circle cx="27" cy="32" r="13"></circle>
+                <circle cx="37" cy="32" r="13"></circle>
+                <path d="M22 21c3-3 7-5 11-5s8 2 11 5"></path>
+              </svg>
+            </div>
+            <div class="final-role-label">Ring</div>
+            <div class="final-role-name">Jubail Galicha</div>
+          </div>
+        </div>
+      </div>
+</div>
     </div>
    </div>
   </div>
