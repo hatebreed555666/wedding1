@@ -926,6 +926,46 @@ section, .wrap, .hero, .hero-content, .gallery-section, .gallery-stage,
   .label{font-size:20px !important}
   .sponsor{font-size:16px !important}
 }
+
+/* Entourage focused layout: mobile-first, no sponsor block */
+.ent-core{margin-top:32px}
+.ent-honor-row{display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:24px;text-align:center}
+.ent-honor-row .honor{min-width:0}
+.ent-honor-row .honor h2{margin:0 0 8px;font-size:18px;line-height:1.2;color:var(--ink)}
+.ent-honor-row .honor p{margin:0;font-size:14px;line-height:1.45;color:#496f86}
+.ent-icon-separator{display:flex;justify-content:center;align-items:center;height:44px;margin:10px 0;color:var(--dusty,#6f94aa)}
+.ent-icon-separator span{display:inline-flex;align-items:center;justify-content:center;font-size:16px;animation:entFloat 3.8s ease-in-out infinite}
+.ent-role-row{display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:22px;text-align:center}
+.ent-role-row .role{min-width:0}
+.ent-role-row .role h3,.ent-candle .role h3{margin:7px 0 6px}
+.ent-role-row .role .name,.ent-candle .role .name{font-size:13px;line-height:1.45;color:#496f86}
+.ent-candle{display:flex;justify-content:center;text-align:center}
+.ent-candle .role{width:min(100%,260px)}
+@keyframes entFloat{0%,100%{transform:translateY(0);opacity:.82}50%{transform:translateY(-3px);opacity:1}}
+@media(max-width:480px){
+  .ent-core{margin-top:26px}
+  .ent-honor-row{gap:12px}
+  .ent-honor-row .honor h2{font-size:15px;letter-spacing:.04em}
+  .ent-honor-row .honor p{font-size:12.5px}
+  .ent-icon-separator{height:38px;margin:7px 0}
+  .ent-role-row{gap:12px}
+  .ent-role-row .role .icon,.ent-candle .role .icon{font-size:22px}
+  .ent-role-row .role h3,.ent-candle .role h3{font-size:15px}
+  .ent-role-row .role .name,.ent-candle .role .name{font-size:11.5px}
+}
+
+</style>
+
+<style>
+.ent-core .role .icon.icon-svg{width:42px;height:42px;font-size:0;color:#7f9caf;display:flex;align-items:center;justify-content:center;margin:0 auto 4px;}
+.ent-core .role .icon.icon-svg svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+@media(max-width:480px){
+  .ent-core .role .icon.icon-svg{width:34px;height:34px;margin-bottom:3px;}
+  .ent-core .role h3{font-size:16px;margin:5px 0 3px;}
+  .ent-core .role .name{font-size:13px;line-height:1.45;}
+  .ent-honor-row .honor h2{font-size:17px;line-height:1.15;}
+  .ent-honor-row .honor p{font-size:13px;line-height:1.4;}
+}
 </style>
 </head>
 <body>
@@ -1046,84 +1086,25 @@ section, .wrap, .hero, .hero-content, .gallery-section, .gallery-stage,
     <div class="ent-grand-opening" aria-hidden="true"><span class="grand-line"></span><span class="grand-mark">✦</span><span class="grand-line"></span></div>
     <div class="kicker" style="text-align:center">With love and gratitude</div><h2 class="ent-title">THE ENTOURAGE</h2><div class="rule">✦</div>
     <p class="ent-intro">We are blessed to be surrounded by the people who have shared our journey and who will stand beside us as we begin our forever.</p>
-    <div class="ent-separator" aria-hidden="true"><span>✦</span></div><div class="label">Principal Sponsors</div>
-    <div class="sponsors">
-     <div class="sponsor">Cynthia Latina &amp; Remegio Latina</div><div class="sponsor">Annaliza Navarro &amp; Allan Navarro</div>
-     <div class="sponsor">Rosalinda Vasquez &amp; Roger Aguila</div><div class="sponsor">Divine Chavez &amp; Anthony Chavez</div>
-     <div class="sponsor">Yolanda Cadeliña &amp; Esteban Cadeliña</div><div class="sponsor">Vilma Grimaldo &amp; Jr Grimaldo</div>
-     <div class="sponsor">Jossie Alvez &amp; Ronald Alvez</div><div class="sponsor">Julita Bahala &amp; Percival Bahala</div>
-     <div class="sponsor">Conie Abu</div><div class="sponsor">Joel Mabilog &amp; Jennifer Mabilog</div>
-    </div>
-   </div>
-  </div>
 
-  <div class="ent-page">
-   <div class="ent-content">
-    <div class="toprow"><div class="honor"><h2>Maid of Honor</h2><p>Vivien Ann Alejandro</p></div><div class="honor"><h2>Best Man</h2><p>Sherwin Glericson Norsio</p></div></div>
-    <div class="ent-separator" aria-hidden="true"><span>✦</span></div>
-    <div class="roles">
-     <div class="role"><div class="icon">♧</div><h3>Veil</h3><div class="name">Aileen Moren &amp; Reniel Del Mundo</div></div>
-     <div class="role"><div class="icon">∞</div><h3>Cord</h3><div class="name">Hairo Amito &amp; Raymon Siman</div></div>
-     <div class="role"><div class="icon">🕯</div><h3>Candle</h3><div class="name">Bianca Mendoza &amp; Joshua Torres</div></div>
-    </div>
-    <div class="ent-separator" aria-hidden="true"><span>✦</span></div>
-    <div class="party">
-     <div class="group"><h3>Bridesmaids</h3><div class="list"><span>Judy Mae Dela Roca</span><span>Margarette Arguelles</span><span>Veronica Cadeliña</span><span>Nicole Abu</span><span>Irish Latina</span><span>Jonalyn Gonzales</span></div></div>
-     <div class="group"><h3>Groomsmen</h3><div class="list"><span>Deary Jun Delos Santos</span><span>Eury Austria</span><span>Joseph Salita</span><span>Cesar Leviste</span><span>Windell Dimayuga</span><span>Jihu Duero</span></div></div>
-    </div>
-    <div class="ent-separator" aria-hidden="true"><span>✦</span></div>
-    <div class="roles four">
-     <div class="role">
-       <div class="icon icon-svg" aria-label="Bible">
-         <svg viewBox="0 0 100 70" aria-hidden="true">
-           <path d="M8 16c14-8 28-7 42 2v40c-14-9-28-10-42-2z"/>
-           <path d="M92 16c-14-8-28-7-42 2v40c14-9 28-10 42-2z"/>
-           <path d="M50 18v40"/>
-           <path d="M50 10v13M43.5 16.5h13"/>
-           <path d="M17 29c10-4 20-3 27 1M17 39c10-4 20-3 27 1"/>
-           <path d="M83 29c-10-4-20-3-27 1M83 39c-10-4-20-3-27 1"/>
-         </svg>
-       </div>
-       <h3>Bible</h3><div class="name">Caile Del Mundo</div>
-     </div>
-     <div class="role">
-       <div class="icon icon-svg" aria-label="Arras">
-         <svg viewBox="0 0 100 70" aria-hidden="true">
-           <ellipse cx="36" cy="37" rx="19" ry="13"/>
-           <ellipse cx="58" cy="26" rx="19" ry="13"/>
-           <ellipse cx="64" cy="44" rx="19" ry="13"/>
-           <path d="M30 37h12M52 26h12M58 44h12"/>
-           <circle cx="36" cy="37" r="3"/><circle cx="58" cy="26" r="3"/><circle cx="64" cy="44" r="3"/>
-         </svg>
-       </div>
-       <h3>Arras</h3><div class="name">Aslan Atenta</div>
-     </div>
-     <div class="role">
-       <div class="icon icon-svg" aria-label="Wedding Rings">
-         <svg viewBox="0 0 100 70" aria-hidden="true">
-           <circle cx="40" cy="39" r="20"/>
-           <circle cx="61" cy="31" r="20"/>
-           <path d="M73 12l5-10 5 10z"/>
-           <path d="M70 12h16"/>
-         </svg>
-       </div>
-       <h3>Ring</h3><div class="name">Jubail Galicha</div>
-     </div>
-     <div class="role">
-       <div class="icon icon-svg" aria-label="Flower Girl">
-         <svg viewBox="0 0 100 70" aria-hidden="true">
-           <circle cx="50" cy="15" r="8"/>
-           <path d="M43 25c-8 7-11 16-12 30h38c-1-14-4-23-12-30"/>
-           <path d="M43 25c4 3 10 4 14 0"/>
-           <path d="M38 31l-12 12M62 31l12 12"/>
-           <path d="M50 55v10"/>
-           <circle cx="26" cy="43" r="3"/><circle cx="21" cy="39" r="3"/><circle cx="31" cy="38" r="3"/>
-           <path d="M23 47c5 5 10 6 15 6"/>
-           <path d="M45 7l-4-5M50 7V1M55 7l4-5"/>
-         </svg>
-       </div>
-       <h3>Flower Girl</h3><div class="name">Arabella Resma</div>
-     </div>
+    <div class="ent-core">
+      <div class="ent-honor-row">
+        <div class="honor"><h2>Maid of Honor</h2><p>Vivien Ann Alejandro</p></div>
+        <div class="honor"><h2>Best Man</h2><p>Sherwin Glericson Norsio</p></div>
+      </div>
+
+      <div class="ent-icon-separator" aria-hidden="true"><span>✦</span></div>
+
+      <div class="ent-role-row">
+        <div class="role"><div class="icon icon-svg" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M21 18c3-5 19-5 22 0"/><path d="M17 20c2 15 8 25 15 32 7-7 13-17 15-32"/><path d="M24 17c2-2 5-4 8-4s6 2 8 4"/><path d="M22 26c6 3 14 3 20 0"/><path d="M27 16c1-3 2-5 5-7 3 2 4 4 5 7"/></svg></div><h3>Veil</h3><div class="name">Aileen Moren &amp; Reniel Del Mundo</div></div>
+        <div class="role"><div class="icon icon-svg" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M19 20c6 0 9 4 9 10s3 10 9 10 9-4 9-10-3-10-9-10-9 4-9 10 3 10 9 10"/><path d="M19 44c6 0 9-4 9-10s3-10 9-10 9 4 9 10-3 10-9 10-9-4-9-10 3-10 9-10"/><path d="M32 21v22"/></svg></div><h3>Cord</h3><div class="name">Hairo Amito &amp; Raymon Siman</div></div>
+      </div>
+
+      <div class="ent-icon-separator" aria-hidden="true"><span>✦</span></div>
+
+      <div class="ent-candle">
+        <div class="role"><div class="icon icon-svg" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M32 11v5"/><path d="M29 17c-2-4 1-7 3-10 2 3 5 6 3 10"/><path d="M24 22h16v27H24z"/><path d="M21 49h22"/><path d="M19 53h26"/><path d="M27 28h10"/><path d="M27 35h10"/><path d="M27 42h10"/></svg></div><h3>Candle</h3><div class="name">Bianca Mendoza &amp; Joshua Torres</div></div>
+      </div>
     </div>
    </div>
   </div>
