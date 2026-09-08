@@ -164,13 +164,18 @@ url("landingpage.jpg") center/cover no-repeat}
 /* DETAILS */
 .details{padding:125px 0;background:linear-gradient(180deg,#17212b,#101319)}
 .section-head{text-align:center}.section-head h2{font-size:clamp(48px,6vw,78px);margin:8px 0}
-.detail-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:50px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.detail{padding:40px 28px;text-align:center;border-right:1px solid var(--line)}
-.detail:last-child{border-right:0}.detail .symbol{font-size:28px;color:var(--champ)}
+.detail-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:50px;position:relative}
+.detail{padding:40px 28px;text-align:center;position:relative}
+.detail:not(:last-child)::after{content:"✦";position:absolute;right:-13px;top:50%;transform:translateY(-50%);width:26px;height:26px;display:grid;place-items:center;color:#8da8ba;background:#eef4f7;border:1px solid rgba(141,168,186,.55);border-radius:50%;font-size:10px;z-index:3;box-shadow:0 4px 16px rgba(40,65,82,.12);transition:transform .5s ease,box-shadow .5s ease}
+.detail:hover:not(:last-child)::after{transform:translateY(-50%) rotate(180deg);box-shadow:0 6px 20px rgba(40,65,82,.2)}
+.detail .symbol{font-size:28px;color:var(--champ)}
 .detail-icon{width:46px;height:46px;margin:0 auto 10px;display:grid;place-items:center;color:#7f9caf}
 .detail-icon svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
 .detail h3{font-size:28px;text-transform:uppercase;letter-spacing:.1em;margin:12px 0}
 .detail p{font-family:"Cormorant Garamond",serif;font-size:21px;line-height:1.5;color:#d7e0e7;margin:0}
+.detail{opacity:0;transform:translateY(18px);animation:detailReveal .8s cubic-bezier(.2,.7,.2,1) both}
+.detail:nth-child(1){animation-delay:.08s}.detail:nth-child(2){animation-delay:.2s}.detail:nth-child(3){animation-delay:.32s}
+@keyframes detailReveal{to{opacity:1;transform:translateY(0)}}
 
 /* ENTOURAGE */
 .ent{padding:100px 0;background:#0d141b}
@@ -850,6 +855,15 @@ section, .wrap, .hero, .hero-content, .gallery-section, .gallery-stage,
  .parents-blessing .family-names{color:#4f687a}
  .parents-blessing .family-names.deceased{color:#5f7788}
 }
+
+@media(max-width:700px){
+  .details .detail{padding:30px 18px 34px}
+  .details .detail:not(:last-child)::after{right:50%;top:auto;bottom:-13px;transform:translateX(50%);}
+  .details .detail:hover:not(:last-child)::after{transform:translateX(50%) rotate(180deg)}
+  .details .detail-icon{width:42px;height:42px;margin-bottom:8px}
+  .details .detail h3{font-size:24px;margin:10px 0}
+  .details .detail p{font-size:19px;line-height:1.42}
+}
 </style>
 </head>
 <body>
@@ -957,7 +971,7 @@ section, .wrap, .hero, .hero-content, .gallery-section, .gallery-stage,
   <div class="section-head"><div class="kicker">Save the date</div><h2>THE CELEBRATION</h2><div class="rule">✦</div></div>
   <div class="detail-grid">
    <div class="detail"><div class="detail-icon" aria-hidden="true"><svg viewBox="0 0 64 64" role="img"><rect x="13" y="16" width="38" height="35" rx="4"></rect><line x1="13" y1="27" x2="51" y2="27"></line><line x1="23" y1="10" x2="23" y2="21"></line><line x1="41" y1="10" x2="41" y2="21"></line><line x1="22" y1="36" x2="30" y2="36"></line><line x1="34" y1="36" x2="42" y2="36"></line><line x1="22" y1="43" x2="30" y2="43"></line><line x1="34" y1="43" x2="42" y2="43"></line></svg></div><h3>When</h3><p>Saturday<br><strong>October 10, 2026</strong><br>8:30 AM Ceremony</p></div>
-   <div class="detail"><div class="detail-icon" aria-hidden="true"><svg viewBox="0 0 64 64" role="img"><path d="M32 54s17-15.5 17-30A17 17 0 1 0 15 24c0 14.5 17 30 17 30Z"></path><circle cx="32" cy="24" r="5.5"></circle></svg></div><h3>Where</h3><p><strong>Sto. Niño Parish Church</strong><br>Lipa City, Batangas</p></div>
+   <div class="detail"><div class="detail-icon" aria-hidden="true"><svg viewBox="0 0 64 64" role="img"><path d="M10 28 32 14l22 14v24H10Z"></path><path d="M25 52V38h14v14"></path><path d="M18 29V22h28v7"></path><path d="M29 14V8h6v6"></path><path d="M32 4v8M28 8h8"></path><path d="M16 34h8v8h-8zM40 34h8v8h-8z"></path></svg></div><h3>Where</h3><p><strong>Sto. Niño Parish Church</strong><br>Lipa City, Batangas</p></div>
    <div class="detail"><div class="detail-icon" aria-hidden="true"><svg viewBox="0 0 64 64" role="img"><path d="M10 20h44v28H10z"></path><path d="M10 20l22-9 22 9"></path><line x1="18" y1="20" x2="18" y2="48"></line><line x1="29" y1="20" x2="29" y2="48"></line><line x1="40" y1="20" x2="40" y2="48"></line><line x1="51" y1="20" x2="51" y2="48"></line></svg></div><h3>Reception</h3><p><strong>Mendoza Residence</strong><br>Celebration to follow</p></div>
   </div>
  </div>
